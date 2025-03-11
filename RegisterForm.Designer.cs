@@ -136,6 +136,7 @@
             this.RegisterBtn.TabIndex = 16;
             this.RegisterBtn.Text = "SIGN UP";
             this.RegisterBtn.UseVisualStyleBackColor = false;
+            this.RegisterBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
             // txtRegisterPassword
             // 
@@ -258,6 +259,7 @@
             this.Controls.Add(this.labelRegisterExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             ((System.ComponentModel.ISupportInitialize)(this.registerPicture)).EndInit();
             this.panelLogin.ResumeLayout(false);

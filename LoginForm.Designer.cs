@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.loginPicture = new System.Windows.Forms.PictureBox();
             this.labelLoginExpenseManager = new System.Windows.Forms.Label();
             this.loginSignupBtn = new System.Windows.Forms.Button();
             this.labelLoginRegisterAccount = new System.Windows.Forms.Label();
@@ -35,7 +36,6 @@
             this.labelLoginPassword = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.loginShowPass = new System.Windows.Forms.CheckBox();
-            this.loginPicture = new System.Windows.Forms.PictureBox();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loginPicture)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,16 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(296, 390);
             this.panelLogin.TabIndex = 0;
+            // 
+            // loginPicture
+            // 
+            this.loginPicture.Image = global::ExpenseManager.Properties.Resources.ExpenseManagerAppIcon;
+            this.loginPicture.Location = new System.Drawing.Point(71, 27);
+            this.loginPicture.Name = "loginPicture";
+            this.loginPicture.Size = new System.Drawing.Size(129, 101);
+            this.loginPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.loginPicture.TabIndex = 10;
+            this.loginPicture.TabStop = false;
             // 
             // labelLoginExpenseManager
             // 
@@ -172,6 +182,7 @@
             this.loginBtn.TabIndex = 7;
             this.loginBtn.Text = "LOGIN";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // loginShowPass
             // 
@@ -184,16 +195,6 @@
             this.loginShowPass.Text = "show password";
             this.loginShowPass.UseVisualStyleBackColor = true;
             this.loginShowPass.CheckedChanged += new System.EventHandler(this.loginShowPass_CheckedChanged);
-            // 
-            // loginPicture
-            // 
-            this.loginPicture.Image = global::ExpenseManager.Properties.Resources.ExpenseManagerAppIcon;
-            this.loginPicture.Location = new System.Drawing.Point(71, 27);
-            this.loginPicture.Name = "loginPicture";
-            this.loginPicture.Size = new System.Drawing.Size(129, 101);
-            this.loginPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loginPicture.TabIndex = 10;
-            this.loginPicture.TabStop = false;
             // 
             // frmLogin
             // 

@@ -9,3 +9,4 @@ C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.frmLogin.res
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.exe
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.pdb
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.RegisterForm.resources
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.MainForm.resources
