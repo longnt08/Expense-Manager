@@ -9,9 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager {
-    public partial class Dashboard : UserControl {
-        public Dashboard() {
+    public partial class ManageTransaction : UserControl {
+        public ManageTransaction() {
             InitializeComponent();
+        }
+
+        private void label5_Click(object sender, EventArgs e) {
+
         }
     }
 }

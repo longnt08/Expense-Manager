@@ -10,3 +10,9 @@ C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.exe
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.pdb
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.RegisterForm.resources
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.MainForm.resources
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.ManageAccount.resources
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.ManageBudget.resources
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.ManageGoal.resources
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.ManageSetting.resources
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.ManageTransaction.resources
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.Dashboard.resources

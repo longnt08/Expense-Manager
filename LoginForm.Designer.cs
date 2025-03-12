@@ -125,7 +125,6 @@
             this.lableLoginAccount.Size = new System.Drawing.Size(141, 22);
             this.lableLoginAccount.TabIndex = 2;
             this.lableLoginAccount.Text = "Login Account";
-            this.lableLoginAccount.Click += new System.EventHandler(this.label2_Click);
             // 
             // labelLoginUsername
             // 

@@ -9,9 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager {
-    public partial class Dashboard : UserControl {
-        public Dashboard() {
+    public partial class ManageSetting : Form {
+        public ManageSetting() {
             InitializeComponent();
+        }
+
+        private void ExitSettingLabel_Click(object sender, EventArgs e) {
+            Application.Exit();
         }
     }
 }

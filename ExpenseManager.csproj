@@ -47,6 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManageAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageAccount.Designer.cs">
+      <DependentUpon>ManageAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBudget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageBudget.Designer.cs">
+      <DependentUpon>ManageBudget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageGoal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageGoal.Designer.cs">
+      <DependentUpon>ManageGoal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageSetting.Designer.cs">
+      <DependentUpon>ManageSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageTransaction.Designer.cs">
+      <DependentUpon>ManageTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\DatabaseHelper.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -68,6 +104,24 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ManageAccount.resx">
+      <DependentUpon>ManageAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBudget.resx">
+      <DependentUpon>ManageBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageGoal.resx">
+      <DependentUpon>ManageGoal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageSetting.resx">
+      <DependentUpon>ManageSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageTransaction.resx">
+      <DependentUpon>ManageTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

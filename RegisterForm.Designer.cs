@@ -186,7 +186,6 @@
             this.lableRegisterAccount.Size = new System.Drawing.Size(169, 22);
             this.lableRegisterAccount.TabIndex = 11;
             this.lableRegisterAccount.Text = "Register Account";
-            this.lableRegisterAccount.Click += new System.EventHandler(this.lableLoginAccount_Click);
             // 
             // labelRegisterExit
             // 
@@ -237,7 +236,6 @@
             this.labelRegisterPhone.Size = new System.Drawing.Size(52, 17);
             this.labelRegisterPhone.TabIndex = 20;
             this.labelRegisterPhone.Text = "Phone:";
-            this.labelRegisterPhone.Click += new System.EventHandler(this.label2_Click);
             // 
             // RegisterForm
             // 

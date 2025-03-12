@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager {
-    public partial class Dashboard : UserControl {
-        public Dashboard() {
+    public partial class ManageGoal : UserControl {
+        public ManageGoal() {
             InitializeComponent();
         }
     }
