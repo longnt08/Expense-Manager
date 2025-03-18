@@ -30,11 +30,9 @@
             this.changeProfileImgBtn = new System.Windows.Forms.Button();
             this.usernameInfo = new System.Windows.Forms.Label();
             this.emailInfo = new System.Windows.Forms.Label();
-            this.phoneInfo = new System.Windows.Forms.Label();
             this.createdAtInfo = new System.Windows.Forms.Label();
             this.idInfo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,11 +52,9 @@
             this.panel1.Controls.Add(this.changeProfileImgBtn);
             this.panel1.Controls.Add(this.usernameInfo);
             this.panel1.Controls.Add(this.emailInfo);
-            this.panel1.Controls.Add(this.phoneInfo);
             this.panel1.Controls.Add(this.createdAtInfo);
             this.panel1.Controls.Add(this.idInfo);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -137,7 +133,7 @@
             // 
             this.usernameInfo.AutoSize = true;
             this.usernameInfo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameInfo.Location = new System.Drawing.Point(625, 93);
+            this.usernameInfo.Location = new System.Drawing.Point(625, 103);
             this.usernameInfo.Name = "usernameInfo";
             this.usernameInfo.Size = new System.Drawing.Size(64, 16);
             this.usernameInfo.TabIndex = 11;
@@ -147,27 +143,17 @@
             // 
             this.emailInfo.AutoSize = true;
             this.emailInfo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailInfo.Location = new System.Drawing.Point(625, 121);
+            this.emailInfo.Location = new System.Drawing.Point(625, 135);
             this.emailInfo.Name = "emailInfo";
             this.emailInfo.Size = new System.Drawing.Size(38, 16);
             this.emailInfo.TabIndex = 10;
             this.emailInfo.Text = "email";
             // 
-            // phoneInfo
-            // 
-            this.phoneInfo.AutoSize = true;
-            this.phoneInfo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneInfo.Location = new System.Drawing.Point(625, 151);
-            this.phoneInfo.Name = "phoneInfo";
-            this.phoneInfo.Size = new System.Drawing.Size(42, 16);
-            this.phoneInfo.TabIndex = 9;
-            this.phoneInfo.Text = "phone";
-            // 
             // createdAtInfo
             // 
             this.createdAtInfo.AutoSize = true;
             this.createdAtInfo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createdAtInfo.Location = new System.Drawing.Point(625, 182);
+            this.createdAtInfo.Location = new System.Drawing.Point(624, 167);
             this.createdAtInfo.Name = "createdAtInfo";
             this.createdAtInfo.Size = new System.Drawing.Size(65, 16);
             this.createdAtInfo.TabIndex = 8;
@@ -177,7 +163,7 @@
             // 
             this.idInfo.AutoSize = true;
             this.idInfo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idInfo.Location = new System.Drawing.Point(625, 67);
+            this.idInfo.Location = new System.Drawing.Point(625, 72);
             this.idInfo.Name = "idInfo";
             this.idInfo.Size = new System.Drawing.Size(46, 16);
             this.idInfo.TabIndex = 7;
@@ -187,27 +173,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(517, 182);
+            this.label6.Location = new System.Drawing.Point(516, 167);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 16);
             this.label6.TabIndex = 6;
             this.label6.Text = "Created at:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(517, 151);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Phone:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(517, 121);
+            this.label4.Location = new System.Drawing.Point(517, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 16);
             this.label4.TabIndex = 4;
@@ -217,7 +193,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(517, 93);
+            this.label3.Location = new System.Drawing.Point(517, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 3;
@@ -227,7 +203,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(517, 67);
+            this.label2.Location = new System.Drawing.Point(517, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 16);
             this.label2.TabIndex = 2;
@@ -280,13 +256,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBoxManageInfo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label usernameInfo;
         private System.Windows.Forms.Label emailInfo;
-        private System.Windows.Forms.Label phoneInfo;
         private System.Windows.Forms.Label createdAtInfo;
         private System.Windows.Forms.Label idInfo;
         private System.Windows.Forms.Button changeProfileImgBtn;

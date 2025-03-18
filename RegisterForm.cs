@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ExpenseManager.Data;
+using ExpenseManager.Helpers;
 
 namespace ExpenseManager {
     public partial class RegisterForm : Form {
@@ -33,7 +33,6 @@ namespace ExpenseManager {
         private void registerBtn_Click(object sender, EventArgs e) {
             if (txtRegisterUsername.Text == "" || 
                 txtRegisterPassword.Text == "" || 
-                txtRegisterPassword.Text == "" ||
                 txtRegisterEmail.Text == "") {
                 MessageBox.Show("Please fill all blank fields");
              } else {
@@ -54,14 +53,13 @@ namespace ExpenseManager {
                                 // insert data
                                 DateTime today = DateTime.Now;
                                 string insertQuery = "INSERT INTO Users " +
-                                    "(username, passwordHash, email, phone, created_at)" +
-                                    "VALUES(@username, @passwordHash, @email, @phone, @created_at)";
+                                    "(username, passwordHash, email, createdAt)" +
+                                    "VALUES(@username, @passwordHash, @email, @created_at)";
 
                                 using (SqlCommand cmd = new SqlCommand(insertQuery, conn)) {
                                     cmd.Parameters.AddWithValue("@username", txtRegisterUsername.Text.Trim());
                                     cmd.Parameters.AddWithValue("@passwordHash", txtRegisterPassword.Text.Trim());
                                     cmd.Parameters.AddWithValue("@email", txtRegisterEmail.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@phone", txtRegisterPhone.Text.Trim());
                                     cmd.Parameters.AddWithValue("@created_at", today);
 
                                     cmd.ExecuteNonQuery();

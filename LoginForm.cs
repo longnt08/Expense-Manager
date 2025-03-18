@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ExpenseManager.Data;
+using ExpenseManager.Helpers;
 
 namespace ExpenseManager {
     public partial class frmLogin : Form {
@@ -50,6 +50,7 @@ namespace ExpenseManager {
 
                             if (dt.Rows.Count >= 1) {
                                 MessageBox.Show("Login successfully");
+                                Session.username = txtLoginUsername.Text;
 
                                 MainForm mainForm = new MainForm();
                                 mainForm.Show();

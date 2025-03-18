@@ -29,17 +29,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
-            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
+            this.txtCategory = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridViewRecentlyTransaction = new System.Windows.Forms.DataGridView();
+            this.filterTransactionBtn = new System.Windows.Forms.Button();
+            this.txtFilterTransaction = new System.Windows.Forms.ComboBox();
+            this.dgvRecentlyTransaction = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecentlyTransaction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentlyTransaction)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -49,7 +51,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtNote);
             this.panel2.Controls.Add(this.txtAmount);
-            this.panel2.Controls.Add(this.comboBoxCategory);
+            this.panel2.Controls.Add(this.txtCategory);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -74,6 +76,7 @@
             this.createTransactionBtn.TabIndex = 10;
             this.createTransactionBtn.Text = "Create";
             this.createTransactionBtn.UseVisualStyleBackColor = false;
+            this.createTransactionBtn.Click += new System.EventHandler(this.createTransactionBtn_Click);
             // 
             // label5
             // 
@@ -102,10 +105,10 @@
             this.txtAmount.Size = new System.Drawing.Size(135, 20);
             this.txtAmount.TabIndex = 4;
             // 
-            // comboBoxCategory
+            // txtCategory
             // 
-            this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Items.AddRange(new object[] {
+            this.txtCategory.FormattingEnabled = true;
+            this.txtCategory.Items.AddRange(new object[] {
             "Food",
             "Bill&Utilities",
             "Shopping",
@@ -120,10 +123,10 @@
             "Repayment",
             "Debt collection",
             "Debt"});
-            this.comboBoxCategory.Location = new System.Drawing.Point(112, 71);
-            this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(135, 21);
-            this.comboBoxCategory.TabIndex = 3;
+            this.txtCategory.Location = new System.Drawing.Point(112, 71);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(135, 21);
+            this.txtCategory.TabIndex = 3;
             // 
             // label4
             // 
@@ -161,7 +164,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.dataGridViewRecentlyTransaction);
+            this.panel1.Controls.Add(this.filterTransactionBtn);
+            this.panel1.Controls.Add(this.txtFilterTransaction);
+            this.panel1.Controls.Add(this.dgvRecentlyTransaction);
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.Color.BurlyWood;
             this.panel1.Location = new System.Drawing.Point(22, 276);
@@ -169,13 +174,38 @@
             this.panel1.Size = new System.Drawing.Size(828, 268);
             this.panel1.TabIndex = 2;
             // 
-            // dataGridViewRecentlyTransaction
+            // filterTransactionBtn
             // 
-            this.dataGridViewRecentlyTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRecentlyTransaction.Location = new System.Drawing.Point(21, 56);
-            this.dataGridViewRecentlyTransaction.Name = "dataGridViewRecentlyTransaction";
-            this.dataGridViewRecentlyTransaction.Size = new System.Drawing.Size(787, 192);
-            this.dataGridViewRecentlyTransaction.TabIndex = 1;
+            this.filterTransactionBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterTransactionBtn.ForeColor = System.Drawing.Color.Black;
+            this.filterTransactionBtn.Location = new System.Drawing.Point(724, 18);
+            this.filterTransactionBtn.Name = "filterTransactionBtn";
+            this.filterTransactionBtn.Size = new System.Drawing.Size(75, 23);
+            this.filterTransactionBtn.TabIndex = 4;
+            this.filterTransactionBtn.Text = "Filter";
+            this.filterTransactionBtn.UseVisualStyleBackColor = true;
+            this.filterTransactionBtn.Click += new System.EventHandler(this.filterTransactionBtn_Click);
+            // 
+            // txtFilterTransaction
+            // 
+            this.txtFilterTransaction.FormattingEnabled = true;
+            this.txtFilterTransaction.Items.AddRange(new object[] {
+            "Expense",
+            "Income",
+            "Debt/loan"});
+            this.txtFilterTransaction.Location = new System.Drawing.Point(597, 20);
+            this.txtFilterTransaction.Name = "txtFilterTransaction";
+            this.txtFilterTransaction.Size = new System.Drawing.Size(121, 21);
+            this.txtFilterTransaction.TabIndex = 2;
+            // 
+            // dgvRecentlyTransaction
+            // 
+            this.dgvRecentlyTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecentlyTransaction.Location = new System.Drawing.Point(21, 56);
+            this.dgvRecentlyTransaction.Name = "dgvRecentlyTransaction";
+            this.dgvRecentlyTransaction.Size = new System.Drawing.Size(787, 192);
+            this.dgvRecentlyTransaction.TabIndex = 1;
+            this.dgvRecentlyTransaction.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecentlyTransaction_CellClick);
             // 
             // label1
             // 
@@ -200,11 +230,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "ManageTransaction";
             this.Size = new System.Drawing.Size(875, 557);
+            this.Load += new System.EventHandler(this.ManageTransaction_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecentlyTransaction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentlyTransaction)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,14 +246,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.ComboBox txtCategory;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridViewRecentlyTransaction;
+        private System.Windows.Forms.DataGridView dgvRecentlyTransaction;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button createTransactionBtn;
+        private System.Windows.Forms.ComboBox txtFilterTransaction;
+        private System.Windows.Forms.Button filterTransactionBtn;
     }
 }

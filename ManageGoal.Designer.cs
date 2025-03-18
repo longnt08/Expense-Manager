@@ -39,6 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.comboBoxFilterGoals = new System.Windows.Forms.ComboBox();
+            this.filterGoalsBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGoals)).BeginInit();
             this.panel2.SuspendLayout();
@@ -47,6 +49,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.filterGoalsBtn);
+            this.panel1.Controls.Add(this.comboBoxFilterGoals);
             this.panel1.Controls.Add(this.dataGridViewGoals);
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.Color.BurlyWood;
@@ -200,6 +204,28 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // comboBoxFilterGoals
+            // 
+            this.comboBoxFilterGoals.FormattingEnabled = true;
+            this.comboBoxFilterGoals.Items.AddRange(new object[] {
+            "In progress",
+            "Completed"});
+            this.comboBoxFilterGoals.Location = new System.Drawing.Point(597, 17);
+            this.comboBoxFilterGoals.Name = "comboBoxFilterGoals";
+            this.comboBoxFilterGoals.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxFilterGoals.TabIndex = 2;
+            // 
+            // filterGoalsBtn
+            // 
+            this.filterGoalsBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterGoalsBtn.ForeColor = System.Drawing.Color.Black;
+            this.filterGoalsBtn.Location = new System.Drawing.Point(733, 17);
+            this.filterGoalsBtn.Name = "filterGoalsBtn";
+            this.filterGoalsBtn.Size = new System.Drawing.Size(75, 23);
+            this.filterGoalsBtn.TabIndex = 3;
+            this.filterGoalsBtn.Text = "Filter";
+            this.filterGoalsBtn.UseVisualStyleBackColor = true;
+            // 
             // ManageGoal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -233,5 +259,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button createGoalBtn;
+        private System.Windows.Forms.Button filterGoalsBtn;
+        private System.Windows.Forms.ComboBox comboBoxFilterGoals;
     }
 }

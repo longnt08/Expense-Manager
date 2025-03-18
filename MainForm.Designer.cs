@@ -35,14 +35,14 @@
             this.manageGoalBtn = new System.Windows.Forms.Button();
             this.manageTransactionBtn = new System.Windows.Forms.Button();
             this.dashboardBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.MainFormUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dashboard1 = new ExpenseManager.Dashboard();
             this.manageTransaction1 = new ExpenseManager.ManageTransaction();
             this.manageGoal1 = new ExpenseManager.ManageGoal();
             this.manageBudget1 = new ExpenseManager.ManageBudget();
             this.manageAccount1 = new ExpenseManager.ManageAccount();
-            this.dashboard1 = new ExpenseManager.Dashboard();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -97,7 +97,7 @@
             this.panel2.Controls.Add(this.manageGoalBtn);
             this.panel2.Controls.Add(this.manageTransactionBtn);
             this.panel2.Controls.Add(this.dashboardBtn);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.MainFormUsername);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 43);
@@ -222,16 +222,16 @@
             this.dashboardBtn.UseVisualStyleBackColor = false;
             this.dashboardBtn.Click += new System.EventHandler(this.dashboardBtn_Click);
             // 
-            // label2
+            // MainFormUsername
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(56, 147);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Welcome user";
+            this.MainFormUsername.AutoSize = true;
+            this.MainFormUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainFormUsername.ForeColor = System.Drawing.Color.White;
+            this.MainFormUsername.Location = new System.Drawing.Point(56, 147);
+            this.MainFormUsername.Name = "MainFormUsername";
+            this.MainFormUsername.Size = new System.Drawing.Size(108, 19);
+            this.MainFormUsername.TabIndex = 1;
+            this.MainFormUsername.Text = "Welcome user";
             // 
             // pictureBox1
             // 
@@ -255,6 +255,13 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(875, 557);
             this.panel3.TabIndex = 2;
+            // 
+            // dashboard1
+            // 
+            this.dashboard1.Location = new System.Drawing.Point(0, 0);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(875, 557);
+            this.dashboard1.TabIndex = 4;
             // 
             // manageTransaction1
             // 
@@ -283,13 +290,6 @@
             this.manageAccount1.Name = "manageAccount1";
             this.manageAccount1.Size = new System.Drawing.Size(875, 557);
             this.manageAccount1.TabIndex = 0;
-            // 
-            // dashboard1
-            // 
-            this.dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(875, 557);
-            this.dashboard1.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -322,7 +322,7 @@
         private System.Windows.Forms.Label labelExitMain;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label MainFormUsername;
         private System.Windows.Forms.Button dashboardBtn;
         private System.Windows.Forms.Button manageGoalBtn;
         private System.Windows.Forms.Button manageTransactionBtn;

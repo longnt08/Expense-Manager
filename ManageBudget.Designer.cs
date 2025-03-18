@@ -39,6 +39,8 @@
             this.dataGridViewBudgets = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.filterBudgetBtn = new System.Windows.Forms.Button();
+            this.comboBoxFilterBudgets = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBudgets)).BeginInit();
@@ -182,6 +184,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.filterBudgetBtn);
+            this.panel1.Controls.Add(this.comboBoxFilterBudgets);
             this.panel1.Controls.Add(this.dataGridViewBudgets);
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.Color.BurlyWood;
@@ -213,6 +217,29 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // filterBudgetBtn
+            // 
+            this.filterBudgetBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterBudgetBtn.ForeColor = System.Drawing.Color.Black;
+            this.filterBudgetBtn.Location = new System.Drawing.Point(731, 17);
+            this.filterBudgetBtn.Name = "filterBudgetBtn";
+            this.filterBudgetBtn.Size = new System.Drawing.Size(75, 23);
+            this.filterBudgetBtn.TabIndex = 6;
+            this.filterBudgetBtn.Text = "Filter";
+            this.filterBudgetBtn.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxFilterBudgets
+            // 
+            this.comboBoxFilterBudgets.FormattingEnabled = true;
+            this.comboBoxFilterBudgets.Items.AddRange(new object[] {
+            "Expense",
+            "Income",
+            "Debt/loan"});
+            this.comboBoxFilterBudgets.Location = new System.Drawing.Point(604, 19);
+            this.comboBoxFilterBudgets.Name = "comboBoxFilterBudgets";
+            this.comboBoxFilterBudgets.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxFilterBudgets.TabIndex = 5;
             // 
             // ManageBudget
             // 
@@ -247,5 +274,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePickerStartDate;
         private System.Windows.Forms.Button createBudgetBtn;
+        private System.Windows.Forms.Button filterBudgetBtn;
+        private System.Windows.Forms.ComboBox comboBoxFilterBudgets;
     }
 }

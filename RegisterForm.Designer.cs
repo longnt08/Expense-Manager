@@ -38,8 +38,6 @@
             this.labelRegisterExit = new System.Windows.Forms.Label();
             this.txtRegisterEmail = new System.Windows.Forms.TextBox();
             this.labelResgiterEmail = new System.Windows.Forms.Label();
-            this.txtRegisterPhone = new System.Windows.Forms.TextBox();
-            this.labelRegisterPhone = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.registerPicture)).BeginInit();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +110,7 @@
             // 
             this.registerShowPass.AutoSize = true;
             this.registerShowPass.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerShowPass.Location = new System.Drawing.Point(523, 352);
+            this.registerShowPass.Location = new System.Drawing.Point(523, 294);
             this.registerShowPass.Name = "registerShowPass";
             this.registerShowPass.Size = new System.Drawing.Size(110, 18);
             this.registerShowPass.TabIndex = 17;
@@ -130,7 +128,7 @@
             this.RegisterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegisterBtn.ForeColor = System.Drawing.Color.White;
-            this.RegisterBtn.Location = new System.Drawing.Point(408, 393);
+            this.RegisterBtn.Location = new System.Drawing.Point(417, 340);
             this.RegisterBtn.Name = "RegisterBtn";
             this.RegisterBtn.Size = new System.Drawing.Size(123, 40);
             this.RegisterBtn.TabIndex = 16;
@@ -141,7 +139,7 @@
             // txtRegisterPassword
             // 
             this.txtRegisterPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegisterPassword.Location = new System.Drawing.Point(337, 302);
+            this.txtRegisterPassword.Location = new System.Drawing.Point(337, 244);
             this.txtRegisterPassword.Multiline = true;
             this.txtRegisterPassword.Name = "txtRegisterPassword";
             this.txtRegisterPassword.PasswordChar = '*';
@@ -152,7 +150,7 @@
             // 
             this.labelRegisterPassword.AutoSize = true;
             this.labelRegisterPassword.Font = new System.Drawing.Font("Tahoma", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegisterPassword.Location = new System.Drawing.Point(337, 282);
+            this.labelRegisterPassword.Location = new System.Drawing.Point(337, 224);
             this.labelRegisterPassword.Name = "labelRegisterPassword";
             this.labelRegisterPassword.Size = new System.Drawing.Size(71, 17);
             this.labelRegisterPassword.TabIndex = 14;
@@ -218,32 +216,11 @@
             this.labelResgiterEmail.TabIndex = 18;
             this.labelResgiterEmail.Text = "Email:";
             // 
-            // txtRegisterPhone
-            // 
-            this.txtRegisterPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegisterPhone.Location = new System.Drawing.Point(337, 235);
-            this.txtRegisterPhone.Multiline = true;
-            this.txtRegisterPhone.Name = "txtRegisterPhone";
-            this.txtRegisterPhone.Size = new System.Drawing.Size(296, 33);
-            this.txtRegisterPhone.TabIndex = 21;
-            // 
-            // labelRegisterPhone
-            // 
-            this.labelRegisterPhone.AutoSize = true;
-            this.labelRegisterPhone.Font = new System.Drawing.Font("Tahoma", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegisterPhone.Location = new System.Drawing.Point(334, 215);
-            this.labelRegisterPhone.Name = "labelRegisterPhone";
-            this.labelRegisterPhone.Size = new System.Drawing.Size(52, 17);
-            this.labelRegisterPhone.TabIndex = 20;
-            this.labelRegisterPhone.Text = "Phone:";
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(640, 445);
-            this.Controls.Add(this.txtRegisterPhone);
-            this.Controls.Add(this.labelRegisterPhone);
             this.Controls.Add(this.txtRegisterEmail);
             this.Controls.Add(this.labelResgiterEmail);
             this.Controls.Add(this.panelLogin);
@@ -284,7 +261,5 @@
         private System.Windows.Forms.Label labelRegisterExit;
         private System.Windows.Forms.TextBox txtRegisterEmail;
         private System.Windows.Forms.Label labelResgiterEmail;
-        private System.Windows.Forms.TextBox txtRegisterPhone;
-        private System.Windows.Forms.Label labelRegisterPhone;
     }
 }
