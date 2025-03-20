@@ -15,7 +15,7 @@ namespace ExpenseManager {
         }
 
         private void ExitSettingLabel_Click(object sender, EventArgs e) {
-            Application.Exit();
+            this.Close();
         }
     }
 }

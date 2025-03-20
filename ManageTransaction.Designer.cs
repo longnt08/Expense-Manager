@@ -127,6 +127,7 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(135, 21);
             this.txtCategory.TabIndex = 3;
+            this.txtCategory.Text = "Select";
             // 
             // label4
             // 
@@ -197,6 +198,7 @@
             this.txtFilterTransaction.Name = "txtFilterTransaction";
             this.txtFilterTransaction.Size = new System.Drawing.Size(121, 21);
             this.txtFilterTransaction.TabIndex = 2;
+            this.txtFilterTransaction.Text = "Select";
             // 
             // dgvRecentlyTransaction
             // 

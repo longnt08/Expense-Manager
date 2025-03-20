@@ -22,6 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
@@ -77,6 +78,7 @@
             // labelExitMain
             // 
             this.labelExitMain.AutoSize = true;
+            this.labelExitMain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelExitMain.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExitMain.ForeColor = System.Drawing.Color.White;
             this.labelExitMain.Location = new System.Drawing.Point(1071, 8);
@@ -152,6 +154,7 @@
             this.SignoutBtn.TabIndex = 6;
             this.SignoutBtn.Text = "Sign out";
             this.SignoutBtn.UseVisualStyleBackColor = false;
+            this.SignoutBtn.Click += new System.EventHandler(this.SignoutBtn_Click);
             // 
             // manageBudgetBtn
             // 
@@ -305,6 +308,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

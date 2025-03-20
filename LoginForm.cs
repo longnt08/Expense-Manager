@@ -12,8 +12,20 @@ using ExpenseManager.Helpers;
 
 namespace ExpenseManager {
     public partial class frmLogin : Form {
+
+        private int userID;
+        private string username;
+        private string email;
+        private DateTime dateCreated;
         public frmLogin() {
             InitializeComponent();
+        }
+        public frmLogin(int userID, string username, string email, DateTime dateCreated) {
+            InitializeComponent();
+            this.userID = userID;
+            this.username = username;
+            this.email = email;
+            this.dateCreated = dateCreated;
         }
 
         private void Exit_Click(object sender, EventArgs e) {
@@ -22,8 +34,8 @@ namespace ExpenseManager {
 
         private void loginSignupBtn_Click(object sender, EventArgs e) {
             RegisterForm registerForm = new RegisterForm();
-            registerForm.Show();
-            this.Hide();
+            registerForm.ShowDialog();
+            this.Close();
         }
 
         private void loginShowPass_CheckedChanged(object sender, EventArgs e) {
@@ -44,19 +56,21 @@ namespace ExpenseManager {
                             cmd.Parameters.AddWithValue("@username", txtLoginUsername.Text.Trim());
                             cmd.Parameters.AddWithValue("@password", txtLoginPassword.Text.Trim());
 
-                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                            DataTable dt = new DataTable();
-                            adapter.Fill(dt);
+                            using (SqlDataReader reader = cmd.ExecuteReader()) {
+                                if (reader.Read()) {
+                                    userID = reader.GetInt32(reader.GetOrdinal("UserID"));
+                                    username = reader.GetString(reader.GetOrdinal("username"));
+                                    email = reader.GetString(reader.GetOrdinal("email"));
+                                    dateCreated = reader.GetDateTime(reader.GetOrdinal("dateCreated"));
 
-                            if (dt.Rows.Count >= 1) {
-                                MessageBox.Show("Login successfully");
-                                Session.username = txtLoginUsername.Text;
+                                    MessageBox.Show("Login successfully");
 
-                                MainForm mainForm = new MainForm();
-                                mainForm.Show();
-                                this.Hide();
-                            } else {
-                                MessageBox.Show("Incorrect username or password");
+                                    MainForm mainForm = new MainForm(userID, username, email, dateCreated);
+                                    mainForm.ShowDialog();
+                                    this.Close();
+                                } else {
+                                    MessageBox.Show("Incorrect username or password");
+                                }
                             }
                         }
                     }

@@ -22,8 +22,8 @@ namespace ExpenseManager {
 
         private void registerLoginBtn_Click(object sender, EventArgs e) {
             frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
-            this.Hide();
+            frmLogin.ShowDialog();
+            this.Close();
         }
 
         private void registerShowPass_CheckedChanged(object sender, EventArgs e) {
@@ -53,23 +53,25 @@ namespace ExpenseManager {
                                 // insert data
                                 DateTime today = DateTime.Now;
                                 string insertQuery = "INSERT INTO Users " +
-                                    "(username, passwordHash, email, createdAt)" +
-                                    "VALUES(@username, @passwordHash, @email, @created_at)";
+                                    "(username, passwordHash, email, DateCreated)" +
+                                    "VALUES(@username, @passwordHash, @email, @DateCreated)" +
+                                    "SELECT SCOPE_IDENTITY();";
 
                                 using (SqlCommand cmd = new SqlCommand(insertQuery, conn)) {
                                     cmd.Parameters.AddWithValue("@username", txtRegisterUsername.Text.Trim());
                                     cmd.Parameters.AddWithValue("@passwordHash", txtRegisterPassword.Text.Trim());
                                     cmd.Parameters.AddWithValue("@email", txtRegisterEmail.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@created_at", today);
+                                    cmd.Parameters.AddWithValue("@DateCreated", today);
 
-                                    cmd.ExecuteNonQuery();
+                                    object result = cmd.ExecuteScalar();
+                                    int userID = Convert.ToInt32(result);
 
                                     MessageBox.Show("Registered successfully",
                                     "Information message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    frmLogin loginForm = new frmLogin();
-                                    loginForm.Show();
-                                    this.Hide();
+                                    frmLogin loginForm = new frmLogin(userID, txtRegisterUsername.Text.Trim(), txtRegisterEmail.Text.Trim(), today);
+                                    loginForm.ShowDialog();
+                                    this.Close();
 
                                     conn.Close();
                                 }

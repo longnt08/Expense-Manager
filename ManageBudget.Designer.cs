@@ -26,36 +26,36 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.createBudgetBtn = new System.Windows.Forms.Button();
-            this.dateTimePickerEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtPickerEndDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtPickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.AddNewTransactionLabel = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
-            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
+            this.txtCategory = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridViewBudgets = new System.Windows.Forms.DataGridView();
+            this.filterBudgetBtn = new System.Windows.Forms.Button();
+            this.txtFilterBudgets = new System.Windows.Forms.ComboBox();
+            this.dgvBudgets = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.filterBudgetBtn = new System.Windows.Forms.Button();
-            this.comboBoxFilterBudgets = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBudgets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBudgets)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.createBudgetBtn);
-            this.panel2.Controls.Add(this.dateTimePickerEndDate);
+            this.panel2.Controls.Add(this.dtPickerEndDate);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.dateTimePickerStartDate);
+            this.panel2.Controls.Add(this.dtPickerStartDate);
             this.panel2.Controls.Add(this.AddNewTransactionLabel);
             this.panel2.Controls.Add(this.txtAmount);
-            this.panel2.Controls.Add(this.comboBoxCategory);
+            this.panel2.Controls.Add(this.txtCategory);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -80,13 +80,14 @@
             this.createBudgetBtn.TabIndex = 10;
             this.createBudgetBtn.Text = "Create";
             this.createBudgetBtn.UseVisualStyleBackColor = false;
+            this.createBudgetBtn.Click += new System.EventHandler(this.createBudgetBtn_Click);
             // 
-            // dateTimePickerEndDate
+            // dtPickerEndDate
             // 
-            this.dateTimePickerEndDate.Location = new System.Drawing.Point(112, 205);
-            this.dateTimePickerEndDate.Name = "dateTimePickerEndDate";
-            this.dateTimePickerEndDate.Size = new System.Drawing.Size(135, 20);
-            this.dateTimePickerEndDate.TabIndex = 9;
+            this.dtPickerEndDate.Location = new System.Drawing.Point(112, 205);
+            this.dtPickerEndDate.Name = "dtPickerEndDate";
+            this.dtPickerEndDate.Size = new System.Drawing.Size(135, 20);
+            this.dtPickerEndDate.TabIndex = 9;
             // 
             // label6
             // 
@@ -99,12 +100,12 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "End date";
             // 
-            // dateTimePickerStartDate
+            // dtPickerStartDate
             // 
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(112, 156);
-            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(135, 20);
-            this.dateTimePickerStartDate.TabIndex = 7;
+            this.dtPickerStartDate.Location = new System.Drawing.Point(112, 156);
+            this.dtPickerStartDate.Name = "dtPickerStartDate";
+            this.dtPickerStartDate.Size = new System.Drawing.Size(135, 20);
+            this.dtPickerStartDate.TabIndex = 7;
             // 
             // AddNewTransactionLabel
             // 
@@ -125,10 +126,10 @@
             this.txtAmount.Size = new System.Drawing.Size(135, 20);
             this.txtAmount.TabIndex = 4;
             // 
-            // comboBoxCategory
+            // txtCategory
             // 
-            this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Items.AddRange(new object[] {
+            this.txtCategory.FormattingEnabled = true;
+            this.txtCategory.Items.AddRange(new object[] {
             "Food",
             "Bill&Utilities",
             "Shopping",
@@ -143,10 +144,10 @@
             "Repayment",
             "Debt collection",
             "Debt"});
-            this.comboBoxCategory.Location = new System.Drawing.Point(112, 71);
-            this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(135, 21);
-            this.comboBoxCategory.TabIndex = 3;
+            this.txtCategory.Location = new System.Drawing.Point(112, 71);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(135, 21);
+            this.txtCategory.TabIndex = 3;
             // 
             // label4
             // 
@@ -185,8 +186,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.filterBudgetBtn);
-            this.panel1.Controls.Add(this.comboBoxFilterBudgets);
-            this.panel1.Controls.Add(this.dataGridViewBudgets);
+            this.panel1.Controls.Add(this.txtFilterBudgets);
+            this.panel1.Controls.Add(this.dgvBudgets);
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.Color.BurlyWood;
             this.panel1.Location = new System.Drawing.Point(23, 277);
@@ -194,13 +195,38 @@
             this.panel1.Size = new System.Drawing.Size(828, 268);
             this.panel1.TabIndex = 4;
             // 
-            // dataGridViewBudgets
+            // filterBudgetBtn
             // 
-            this.dataGridViewBudgets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBudgets.Location = new System.Drawing.Point(21, 56);
-            this.dataGridViewBudgets.Name = "dataGridViewBudgets";
-            this.dataGridViewBudgets.Size = new System.Drawing.Size(787, 192);
-            this.dataGridViewBudgets.TabIndex = 1;
+            this.filterBudgetBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterBudgetBtn.ForeColor = System.Drawing.Color.Black;
+            this.filterBudgetBtn.Location = new System.Drawing.Point(731, 17);
+            this.filterBudgetBtn.Name = "filterBudgetBtn";
+            this.filterBudgetBtn.Size = new System.Drawing.Size(75, 23);
+            this.filterBudgetBtn.TabIndex = 6;
+            this.filterBudgetBtn.Text = "Filter";
+            this.filterBudgetBtn.UseVisualStyleBackColor = true;
+            this.filterBudgetBtn.Click += new System.EventHandler(this.filterBudgetBtn_Click);
+            // 
+            // txtFilterBudgets
+            // 
+            this.txtFilterBudgets.FormattingEnabled = true;
+            this.txtFilterBudgets.Items.AddRange(new object[] {
+            "Expense",
+            "Income",
+            "Debt/loan"});
+            this.txtFilterBudgets.Location = new System.Drawing.Point(604, 19);
+            this.txtFilterBudgets.Name = "txtFilterBudgets";
+            this.txtFilterBudgets.Size = new System.Drawing.Size(121, 21);
+            this.txtFilterBudgets.TabIndex = 5;
+            // 
+            // dgvBudgets
+            // 
+            this.dgvBudgets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBudgets.Location = new System.Drawing.Point(21, 56);
+            this.dgvBudgets.Name = "dgvBudgets";
+            this.dgvBudgets.Size = new System.Drawing.Size(787, 192);
+            this.dgvBudgets.TabIndex = 1;
+            this.dgvBudgets.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBudgets_CellClick);
             // 
             // label1
             // 
@@ -218,29 +244,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // filterBudgetBtn
-            // 
-            this.filterBudgetBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterBudgetBtn.ForeColor = System.Drawing.Color.Black;
-            this.filterBudgetBtn.Location = new System.Drawing.Point(731, 17);
-            this.filterBudgetBtn.Name = "filterBudgetBtn";
-            this.filterBudgetBtn.Size = new System.Drawing.Size(75, 23);
-            this.filterBudgetBtn.TabIndex = 6;
-            this.filterBudgetBtn.Text = "Filter";
-            this.filterBudgetBtn.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxFilterBudgets
-            // 
-            this.comboBoxFilterBudgets.FormattingEnabled = true;
-            this.comboBoxFilterBudgets.Items.AddRange(new object[] {
-            "Expense",
-            "Income",
-            "Debt/loan"});
-            this.comboBoxFilterBudgets.Location = new System.Drawing.Point(604, 19);
-            this.comboBoxFilterBudgets.Name = "comboBoxFilterBudgets";
-            this.comboBoxFilterBudgets.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxFilterBudgets.TabIndex = 5;
-            // 
             // ManageBudget
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -248,11 +251,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "ManageBudget";
             this.Size = new System.Drawing.Size(875, 557);
+            this.Load += new System.EventHandler(this.ManageBudget_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBudgets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBudgets)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,19 +266,19 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label AddNewTransactionLabel;
         private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.ComboBox txtCategory;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridViewBudgets;
+        private System.Windows.Forms.DataGridView dgvBudgets;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.DateTimePicker dateTimePickerEndDate;
+        private System.Windows.Forms.DateTimePicker dtPickerEndDate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStartDate;
+        private System.Windows.Forms.DateTimePicker dtPickerStartDate;
         private System.Windows.Forms.Button createBudgetBtn;
         private System.Windows.Forms.Button filterBudgetBtn;
-        private System.Windows.Forms.ComboBox comboBoxFilterBudgets;
+        private System.Windows.Forms.ComboBox txtFilterBudgets;
     }
 }

@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace ExpenseManager.Helpers {
     public static class Session {
-        public static string username {  get; set; }
+        public static string username = "";
     }
 }

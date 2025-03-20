@@ -17,5 +17,15 @@ namespace ExpenseManager {
         private void panel3_Paint(object sender, PaintEventArgs e) {
 
         }
+
+        private void ManageAccount_Load(object sender, EventArgs e) {
+            
+        }
+        public void setData(int userID, string username, string email, DateTime dateCreated) {
+            idInfo.Text = userID.ToString();
+            usernameInfo.Text = username;
+            emailInfo.Text = email;
+            createdAtInfo.Text = dateCreated.ToString();
+        }
     }
 }

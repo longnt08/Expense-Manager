@@ -106,6 +106,24 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateBudget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateBudget.Designer.cs">
+      <DependentUpon>UpdateBudget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateGoalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateGoalForm.Designer.cs">
+      <DependentUpon>UpdateGoalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateTransactionForm.Designer.cs">
+      <DependentUpon>UpdateTransactionForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ManageAccount.resx">
       <DependentUpon>ManageAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +160,15 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateBudget.resx">
+      <DependentUpon>UpdateBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateGoalForm.resx">
+      <DependentUpon>UpdateGoalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateTransactionForm.resx">
+      <DependentUpon>UpdateTransactionForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

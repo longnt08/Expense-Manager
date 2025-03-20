@@ -8,12 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 using ExpenseManager.Helpers;
 
 namespace ExpenseManager {
     public partial class ManageTransaction : UserControl {
+
+        DatabaseHelper databaseHelper = new DatabaseHelper();
+
         public ManageTransaction() {
             InitializeComponent();
+            //var cnnStr = ConfigurationManager.ConnectionStrings["MyCNN"]?.ConnectionString;
+            //if (string.IsNullOrEmpty(cnnStr)) {
+            //    MessageBox.Show("Không tìm thấy connection string MyCNN");
+            //} else {
+            //    MessageBox.Show("Đã load được connection string:\n" + cnnStr);
+            //}
+
         }
 
         private void label5_Click(object sender, EventArgs e) {
@@ -28,10 +39,9 @@ namespace ExpenseManager {
                 MessageBox.Show("Please enter amount!");
             }
             try {
-                DatabaseHelper databaseHelper = new DatabaseHelper();
                 using (SqlConnection conn = databaseHelper.GetConnection()) {
 
-                    // lay CategoryID theo Categoryname
+                    // lay CategoryID theo CategoryName
                     string selectCategory = "SELECT CategoryID FROM Categories WHERE CategoryName = @CategoryName";
                     int categoryId = databaseHelper.GetIdFromDatabase(selectCategory, "@Categoryname", txtCategory.Text.Trim(), conn);
 
@@ -42,14 +52,14 @@ namespace ExpenseManager {
                     // insert transaction
                     DateTime today = DateTime.Now;
                     string insertQuery = "INSERT INTO Transactions " +
-                        "(UserID, CategoryID, Amount, Created_at, Note)" + 
-                        "VALUES(@UserID, @CategoryID, @Amount, @Created_at, @Note)";
+                        "(UserID, CategoryID, Amount, TransactionDate, Note)" + 
+                        "VALUES(@UserID, @CategoryID, @Amount, @TransactionDate, @Note)";
 
                     using (SqlCommand cmd = new SqlCommand(insertQuery, conn)) {
                         cmd.Parameters.AddWithValue("@UserID", userId);
                         cmd.Parameters.AddWithValue("@CategoryID", categoryId);
                         cmd.Parameters.AddWithValue("@Amount", txtAmount.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Created_at", today);
+                        cmd.Parameters.AddWithValue("@TransactionDate", today);
                         cmd.Parameters.AddWithValue("@Note", txtNote.Text.Trim());
 
                         cmd.ExecuteNonQuery();
@@ -68,7 +78,6 @@ namespace ExpenseManager {
 
         private void ManageTransaction_Load(object sender, EventArgs e) {
             try {
-                DatabaseHelper databaseHelper = new DatabaseHelper();
                 using (SqlConnection conn = databaseHelper.GetConnection()) {
                     string query = "SELECT * FROM Transactions";
                     FormHelper.LoadData(dgvRecentlyTransaction, query, conn);
@@ -78,6 +87,8 @@ namespace ExpenseManager {
                     }
                     dgvRecentlyTransaction.CellClick -= dgvRecentlyTransaction_CellClick;
                     dgvRecentlyTransaction.CellClick += dgvRecentlyTransaction_CellClick;
+
+                    conn.Close();
                 }
             } catch (Exception ex) {
                 MessageBox.Show("Error: " + ex.Message);
@@ -87,40 +98,50 @@ namespace ExpenseManager {
         private void dgvRecentlyTransaction_CellClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
 
-            //if (dgvRecentlyTransaction.Columns[e.ColumnIndex].Name == "btnUpdate") {
-            //    int id = dgvRecentlyTransaction.Rows[e.RowIndex].Cells["TransactionID"].Value;
+            int transactionID;
+            var cell = dgvRecentlyTransaction.Rows[e.RowIndex].Cells["TransactionID"];
+            if (cell == null || cell.Value == null) {
+                return;
+            } else {
+                transactionID = Convert.ToInt32(cell.Value);
+            }
 
-            //}
+            if (dgvRecentlyTransaction.Columns[e.ColumnIndex].Name == "btnUpdate") {
+                dgvRecentlyTransaction.EndEdit();
+
+                UpdateTransactionForm updateTransactionForm = new UpdateTransactionForm(transactionID);
+                var result = updateTransactionForm.ShowDialog();
+
+                if (result == DialogResult.OK) {
+                    using (SqlConnection conn = databaseHelper.GetConnection()) {
+                        FormHelper.LoadData(dgvRecentlyTransaction, "SELECT * FROM Transactions", conn);
+                    }
+                    FormHelper.AddButtonColumns(dgvRecentlyTransaction);
+                }
+            }
 
             if (dgvRecentlyTransaction.Columns[e.ColumnIndex].Name == "btnDelete") {
-                var cell = dgvRecentlyTransaction.Rows[e.RowIndex].Cells["TransactionID"];
-                if (cell == null || cell.Value == null) {
-                    return;
-                } else {
-                    DialogResult dialog = MessageBox.Show("Do you really want to delete this item?", "Confirm", MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show("Do you really want to delete this item?", "Confirm", MessageBoxButtons.YesNo);
 
-                    if (dialog == DialogResult.Yes) {
-                        int transactionId = Convert.ToInt32(cell.Value);
-                        try {
-                            DatabaseHelper databaseHelper = new DatabaseHelper();
-                            using (SqlConnection conn = databaseHelper.GetConnection()) {
-                                conn.Open();
-                                string query = "DELETE FROM Transactions WHERE TransactionID = @transactionId";
-                                databaseHelper.deleteItem(query, "@transactionId", transactionId, conn);
+                if (dialog == DialogResult.Yes) {
+                    int transactionId = Convert.ToInt32(cell.Value);
+                    try {
+                        using (SqlConnection conn = databaseHelper.GetConnection()) {
+                            string query = "DELETE FROM Transactions WHERE TransactionID = @transactionId";
+                            databaseHelper.deleteItem(query, "@transactionId", transactionId, conn);
 
-                                FormHelper.LoadData(dgvRecentlyTransaction, "SELECT * FROM Transactions", conn);
-                                if (dgvRecentlyTransaction.Columns["btnUpdate"] != null)
-                                    dgvRecentlyTransaction.Columns.Remove("btnUpdate");
-                                if (dgvRecentlyTransaction.Columns["btnDelete"] != null)
-                                    dgvRecentlyTransaction.Columns.Remove("btnDelete");
+                            FormHelper.LoadData(dgvRecentlyTransaction, "SELECT * FROM Transactions", conn);
+                            if (dgvRecentlyTransaction.Columns["btnUpdate"] != null)
+                                dgvRecentlyTransaction.Columns.Remove("btnUpdate");
+                            if (dgvRecentlyTransaction.Columns["btnDelete"] != null)
+                                dgvRecentlyTransaction.Columns.Remove("btnDelete");
 
-                                // Chỉ thêm nút nếu có dữ liệu
-                                FormHelper.AddButtonColumns(dgvRecentlyTransaction);
-                                return;
-                            }
-                        } catch (Exception ex) {
-                            MessageBox.Show("Error: " + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            // Chỉ thêm nút nếu có dữ liệu
+                            FormHelper.AddButtonColumns(dgvRecentlyTransaction);
+                            return;
                         }
+                    } catch (Exception ex) {
+                        MessageBox.Show("Error: " + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -128,7 +149,6 @@ namespace ExpenseManager {
 
         private void filterTransactionBtn_Click(object sender, EventArgs e) {
             try{
-                DatabaseHelper databaseHelper = new DatabaseHelper();
                 using (SqlConnection conn = databaseHelper.GetConnection()) {
                     // lay CategoryID theo CategoryType
                     string query = "SELECT CategoryID FROM Categories WHERE CategoryType = @CategoryType";

@@ -16,3 +16,6 @@ C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.csproj.Gener
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.exe
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.pdb
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.UpdateBudget.resources
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.UpdateGoalForm.resources
+C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.UpdateTransactionForm.resources

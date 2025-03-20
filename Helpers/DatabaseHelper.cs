@@ -6,12 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace ExpenseManager.Helpers {
     public class DatabaseHelper {
-        private readonly string _connectionString;
+        private string _connectionString;
         public DatabaseHelper() {
-            _connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MyCNN"].ConnectionString;
+            //var cnn = ConfigurationManager.ConnectionStrings["MyCNN"];
+            //if (cnn == null) {
+            //    MessageBox.Show("Connection string not found");
+            //} else {
+            //    _connectionString = cnn.ConnectionString;
+            //}
+            _connectionString = "Server=GOKU\\SQLEXPRESS;Database=ExpenseManager;User Id=otherAdmin;Password=12345678;";
         }
         public SqlConnection GetConnection() {
             return new SqlConnection(_connectionString);
@@ -29,6 +36,10 @@ namespace ExpenseManager.Helpers {
         }
 
         public void deleteItem(string query, string paramName, int id, SqlConnection conn) {
+            if (conn.State == ConnectionState.Closed) {
+                conn.Open();
+            }
+
             using (SqlCommand cmd = new SqlCommand(query, conn)) {
                 cmd.Parameters.AddWithValue(paramName, id);
                 cmd.ExecuteNonQuery();

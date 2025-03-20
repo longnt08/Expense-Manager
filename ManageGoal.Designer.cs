@@ -25,24 +25,24 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridViewGoals = new System.Windows.Forms.DataGridView();
+            this.filterGoalsBtn = new System.Windows.Forms.Button();
+            this.txtFilterGoals = new System.Windows.Forms.ComboBox();
+            this.dgvGoals = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.createGoalBtn = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtPickerDealine = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.datetimePickerDeadline = new System.Windows.Forms.TextBox();
+            this.txtSavedAmount = new System.Windows.Forms.TextBox();
             this.txtTargetAmout = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.comboBoxFilterGoals = new System.Windows.Forms.ComboBox();
-            this.filterGoalsBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGoals)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGoals)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,8 +50,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.filterGoalsBtn);
-            this.panel1.Controls.Add(this.comboBoxFilterGoals);
-            this.panel1.Controls.Add(this.dataGridViewGoals);
+            this.panel1.Controls.Add(this.txtFilterGoals);
+            this.panel1.Controls.Add(this.dgvGoals);
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.Color.BurlyWood;
             this.panel1.Location = new System.Drawing.Point(30, 276);
@@ -59,13 +59,38 @@
             this.panel1.Size = new System.Drawing.Size(828, 268);
             this.panel1.TabIndex = 0;
             // 
-            // dataGridViewGoals
+            // filterGoalsBtn
             // 
-            this.dataGridViewGoals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGoals.Location = new System.Drawing.Point(21, 56);
-            this.dataGridViewGoals.Name = "dataGridViewGoals";
-            this.dataGridViewGoals.Size = new System.Drawing.Size(787, 192);
-            this.dataGridViewGoals.TabIndex = 1;
+            this.filterGoalsBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterGoalsBtn.ForeColor = System.Drawing.Color.Black;
+            this.filterGoalsBtn.Location = new System.Drawing.Point(733, 17);
+            this.filterGoalsBtn.Name = "filterGoalsBtn";
+            this.filterGoalsBtn.Size = new System.Drawing.Size(75, 23);
+            this.filterGoalsBtn.TabIndex = 3;
+            this.filterGoalsBtn.Text = "Filter";
+            this.filterGoalsBtn.UseVisualStyleBackColor = true;
+            this.filterGoalsBtn.Click += new System.EventHandler(this.filterGoalsBtn_Click);
+            // 
+            // txtFilterGoals
+            // 
+            this.txtFilterGoals.FormattingEnabled = true;
+            this.txtFilterGoals.Items.AddRange(new object[] {
+            "In progress",
+            "Completed"});
+            this.txtFilterGoals.Location = new System.Drawing.Point(597, 17);
+            this.txtFilterGoals.Name = "txtFilterGoals";
+            this.txtFilterGoals.Size = new System.Drawing.Size(121, 21);
+            this.txtFilterGoals.TabIndex = 2;
+            this.txtFilterGoals.Text = "Select";
+            // 
+            // dgvGoals
+            // 
+            this.dgvGoals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGoals.Location = new System.Drawing.Point(21, 56);
+            this.dgvGoals.Name = "dgvGoals";
+            this.dgvGoals.Size = new System.Drawing.Size(787, 192);
+            this.dgvGoals.TabIndex = 1;
+            this.dgvGoals.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGoals_CellClick);
             // 
             // label1
             // 
@@ -82,11 +107,11 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.createGoalBtn);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dtPickerDealine);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtName);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.datetimePickerDeadline);
+            this.panel2.Controls.Add(this.txtSavedAmount);
             this.panel2.Controls.Add(this.txtTargetAmout);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -112,13 +137,14 @@
             this.createGoalBtn.TabIndex = 10;
             this.createGoalBtn.Text = "Create";
             this.createGoalBtn.UseVisualStyleBackColor = false;
+            this.createGoalBtn.Click += new System.EventHandler(this.createGoalBtn_Click);
             // 
-            // dateTimePicker1
+            // dtPickerDealine
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(131, 211);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(199, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dtPickerDealine.Location = new System.Drawing.Point(131, 211);
+            this.dtPickerDealine.Name = "dtPickerDealine";
+            this.dtPickerDealine.Size = new System.Drawing.Size(199, 20);
+            this.dtPickerDealine.TabIndex = 9;
             // 
             // label6
             // 
@@ -150,13 +176,13 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Add new goal";
             // 
-            // datetimePickerDeadline
+            // txtSavedAmount
             // 
-            this.datetimePickerDeadline.Location = new System.Drawing.Point(131, 163);
-            this.datetimePickerDeadline.Multiline = true;
-            this.datetimePickerDeadline.Name = "datetimePickerDeadline";
-            this.datetimePickerDeadline.Size = new System.Drawing.Size(199, 20);
-            this.datetimePickerDeadline.TabIndex = 5;
+            this.txtSavedAmount.Location = new System.Drawing.Point(131, 163);
+            this.txtSavedAmount.Multiline = true;
+            this.txtSavedAmount.Name = "txtSavedAmount";
+            this.txtSavedAmount.Size = new System.Drawing.Size(199, 20);
+            this.txtSavedAmount.TabIndex = 5;
             // 
             // txtTargetAmout
             // 
@@ -204,28 +230,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // comboBoxFilterGoals
-            // 
-            this.comboBoxFilterGoals.FormattingEnabled = true;
-            this.comboBoxFilterGoals.Items.AddRange(new object[] {
-            "In progress",
-            "Completed"});
-            this.comboBoxFilterGoals.Location = new System.Drawing.Point(597, 17);
-            this.comboBoxFilterGoals.Name = "comboBoxFilterGoals";
-            this.comboBoxFilterGoals.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxFilterGoals.TabIndex = 2;
-            // 
-            // filterGoalsBtn
-            // 
-            this.filterGoalsBtn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterGoalsBtn.ForeColor = System.Drawing.Color.Black;
-            this.filterGoalsBtn.Location = new System.Drawing.Point(733, 17);
-            this.filterGoalsBtn.Name = "filterGoalsBtn";
-            this.filterGoalsBtn.Size = new System.Drawing.Size(75, 23);
-            this.filterGoalsBtn.TabIndex = 3;
-            this.filterGoalsBtn.Text = "Filter";
-            this.filterGoalsBtn.UseVisualStyleBackColor = true;
-            // 
             // ManageGoal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -233,9 +237,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "ManageGoal";
             this.Size = new System.Drawing.Size(875, 557);
+            this.Load += new System.EventHandler(this.ManageGoal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGoals)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGoals)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -247,19 +252,19 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridViewGoals;
+        private System.Windows.Forms.DataGridView dgvGoals;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox datetimePickerDeadline;
+        private System.Windows.Forms.TextBox txtSavedAmount;
         private System.Windows.Forms.TextBox txtTargetAmout;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtPickerDealine;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button createGoalBtn;
         private System.Windows.Forms.Button filterGoalsBtn;
-        private System.Windows.Forms.ComboBox comboBoxFilterGoals;
+        private System.Windows.Forms.ComboBox txtFilterGoals;
     }
 }
