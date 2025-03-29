@@ -47,6 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAmountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAmountForm.Designer.cs">
+      <DependentUpon>AddAmountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCash.Designer.cs">
+      <DependentUpon>AddCash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddFundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFundForm.Designer.cs">
+      <DependentUpon>AddFundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMainFund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMainFund.Designer.cs">
+      <DependentUpon>AddMainFund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPettyFund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPettyFund.Designer.cs">
+      <DependentUpon>AddPettyFund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSavings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSavings.Designer.cs">
+      <DependentUpon>AddSavings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\FormHelper.cs" />
     <Compile Include="Helpers\Session.cs" />
     <Compile Include="ManageAccount.cs">
@@ -60,6 +96,18 @@
     </Compile>
     <Compile Include="ManageBudget.Designer.cs">
       <DependentUpon>ManageBudget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDebt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageDebt.Designer.cs">
+      <DependentUpon>ManageDebt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageFund.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageFund.Designer.cs">
+      <DependentUpon>ManageFund.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageGoal.cs">
       <SubType>UserControl</SubType>
@@ -124,11 +172,35 @@
     <Compile Include="UpdateTransactionForm.Designer.cs">
       <DependentUpon>UpdateTransactionForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAmountForm.resx">
+      <DependentUpon>AddAmountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCash.resx">
+      <DependentUpon>AddCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddFundForm.resx">
+      <DependentUpon>AddFundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMainFund.resx">
+      <DependentUpon>AddMainFund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPettyFund.resx">
+      <DependentUpon>AddPettyFund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSavings.resx">
+      <DependentUpon>AddSavings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageAccount.resx">
       <DependentUpon>ManageAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageBudget.resx">
       <DependentUpon>ManageBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageDebt.resx">
+      <DependentUpon>ManageDebt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageFund.resx">
+      <DependentUpon>ManageFund.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageGoal.resx">
       <DependentUpon>ManageGoal.cs</DependentUpon>

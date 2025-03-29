@@ -218,6 +218,7 @@
             this.txtFilterBudgets.Name = "txtFilterBudgets";
             this.txtFilterBudgets.Size = new System.Drawing.Size(121, 21);
             this.txtFilterBudgets.TabIndex = 5;
+            this.txtFilterBudgets.Text = "Select";
             // 
             // dgvBudgets
             // 

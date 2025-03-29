@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace ExpenseManager {
     public partial class ManageAccount : UserControl {
+
+        public event EventHandler LogoutClicked;
         public ManageAccount() {
             InitializeComponent();
         }
@@ -26,6 +28,11 @@ namespace ExpenseManager {
             usernameInfo.Text = username;
             emailInfo.Text = email;
             createdAtInfo.Text = dateCreated.ToString();
+        }
+
+        private void logoutBtnManageAcc_Click(object sender, EventArgs e) {
+            MessageBox.Show("button clicked");
+            LogoutClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -13,7 +13,7 @@ using ExpenseManager.Helpers;
 namespace ExpenseManager {
     public partial class UpdateGoalForm : Form {
 
-        DatabaseHelper databaseHelper = new DatabaseHelper();
+        //DatabaseHelper databaseHelper = new DatabaseHelper();
         private int GoalID;
         public UpdateGoalForm() {
             InitializeComponent();
@@ -33,32 +33,36 @@ namespace ExpenseManager {
                 MessageBox.Show("Please select a date after today.");
                 return;
             }
-            try {
-                using (SqlConnection conn = databaseHelper.GetConnection()) {
+            //try {
+            //    using (SqlConnection conn = databaseHelper.GetConnection()) {
 
-                    // insert budget
-                    string updateQuery = "UPDATE Goals " +
-                        "SET GoalName=@GoalName, TargetAmount=@TargetAmount, SavedAmount=@SavedAmount, Deadline=@Deadline " +
-                        "WHERE GoalID=@GoalID";
+            //        // insert budget
+            //        string updateQuery = "UPDATE Goals " +
+            //            "SET GoalName=@GoalName, TargetAmount=@TargetAmount, SavedAmount=@SavedAmount, Deadline=@Deadline " +
+            //            "WHERE GoalID=@GoalID";
 
-                    using (SqlCommand cmd = new SqlCommand(updateQuery, conn)) {
-                        cmd.Parameters.AddWithValue("@GoalName", txtName.Text.Trim());
-                        cmd.Parameters.AddWithValue("@TargetAmount", txtTargetAmout.Text.Trim());
-                        cmd.Parameters.AddWithValue("@SavedAmount", txtSavedAmount.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Deadline", dtPickerDealine.Value.Date);
-                        cmd.Parameters.AddWithValue("@GoalID", this.GoalID);
+            //        using (SqlCommand cmd = new SqlCommand(updateQuery, conn)) {
+            //            cmd.Parameters.AddWithValue("@GoalName", txtName.Text.Trim());
+            //            cmd.Parameters.AddWithValue("@TargetAmount", txtTargetAmout.Text.Trim());
+            //            cmd.Parameters.AddWithValue("@SavedAmount", txtSavedAmount.Text.Trim());
+            //            cmd.Parameters.AddWithValue("@Deadline", dtPickerDealine.Value.Date);
+            //            cmd.Parameters.AddWithValue("@GoalID", this.GoalID);
 
-                        cmd.ExecuteNonQuery();
+            //            cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("Goal updated successfully!",
-                        "Information message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //            MessageBox.Show("Goal updated successfully!",
+            //            "Information message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        }
+            //    }
+            //    this.DialogResult = DialogResult.OK;
+            //    this.Close();
+            //} catch (Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e) {
+            this.Close();
         }
     }
 }

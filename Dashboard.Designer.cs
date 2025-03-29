@@ -25,15 +25,15 @@
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.balanceLbl = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.totalIncomeLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.totalExpenseLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -60,7 +60,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.balanceLbl);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Location = new System.Drawing.Point(570, 19);
@@ -68,23 +68,23 @@
             this.panel5.Size = new System.Drawing.Size(257, 139);
             this.panel5.TabIndex = 2;
             // 
-            // label6
+            // balanceLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(225, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(14, 16);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "0";
+            this.balanceLbl.AutoSize = true;
+            this.balanceLbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceLbl.ForeColor = System.Drawing.Color.White;
+            this.balanceLbl.Location = new System.Drawing.Point(141, 17);
+            this.balanceLbl.Name = "balanceLbl";
+            this.balanceLbl.Size = new System.Drawing.Size(14, 16);
+            this.balanceLbl.TabIndex = 4;
+            this.balanceLbl.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(188, 101);
+            this.label7.Location = new System.Drawing.Point(141, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 16);
             this.label7.TabIndex = 3;
@@ -102,7 +102,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.totalIncomeLbl);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Location = new System.Drawing.Point(293, 18);
@@ -110,23 +110,23 @@
             this.panel4.Size = new System.Drawing.Size(257, 139);
             this.panel4.TabIndex = 1;
             // 
-            // label4
+            // totalIncomeLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(228, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "0";
+            this.totalIncomeLbl.AutoSize = true;
+            this.totalIncomeLbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalIncomeLbl.ForeColor = System.Drawing.Color.White;
+            this.totalIncomeLbl.Location = new System.Drawing.Point(136, 18);
+            this.totalIncomeLbl.Name = "totalIncomeLbl";
+            this.totalIncomeLbl.Size = new System.Drawing.Size(14, 16);
+            this.totalIncomeLbl.TabIndex = 4;
+            this.totalIncomeLbl.Text = "0";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(161, 102);
+            this.label5.Location = new System.Drawing.Point(136, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 16);
             this.label5.TabIndex = 3;
@@ -144,7 +144,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.totalExpenseLbl);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(18, 19);
@@ -152,23 +152,23 @@
             this.panel3.Size = new System.Drawing.Size(257, 139);
             this.panel3.TabIndex = 0;
             // 
-            // label2
+            // totalExpenseLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(228, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "0";
+            this.totalExpenseLbl.AutoSize = true;
+            this.totalExpenseLbl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalExpenseLbl.ForeColor = System.Drawing.Color.White;
+            this.totalExpenseLbl.Location = new System.Drawing.Point(136, 17);
+            this.totalExpenseLbl.Name = "totalExpenseLbl";
+            this.totalExpenseLbl.Size = new System.Drawing.Size(14, 16);
+            this.totalExpenseLbl.TabIndex = 2;
+            this.totalExpenseLbl.Text = "0";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(155, 101);
+            this.label1.Location = new System.Drawing.Point(136, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 16);
             this.label1.TabIndex = 1;
@@ -222,11 +222,11 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label balanceLbl;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label totalIncomeLbl;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label totalExpenseLbl;
         private System.Windows.Forms.Label label1;
     }
 }

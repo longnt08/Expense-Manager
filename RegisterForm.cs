@@ -22,8 +22,8 @@ namespace ExpenseManager {
 
         private void registerLoginBtn_Click(object sender, EventArgs e) {
             frmLogin frmLogin = new frmLogin();
-            frmLogin.ShowDialog();
-            this.Close();
+            frmLogin.Show();
+            this.Hide();
         }
 
         private void registerShowPass_CheckedChanged(object sender, EventArgs e) {

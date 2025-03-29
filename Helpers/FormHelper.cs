@@ -35,6 +35,22 @@ namespace ExpenseManager.Helpers {
             dgv.Columns.Add(deleteBtn);
         }
 
+        public static void AddAmountButton(DataGridView dgv) {
+            bool hasData = dgv.Rows.Cast<DataGridViewRow>().Any(row => !row.IsNewRow);
+
+            if (!hasData) return;
+
+            if (dgv.Columns["btnAddAmount"] != null) dgv.Columns.Remove("btnAddAmount");
+
+            DataGridViewButtonColumn addAmountBtn = new DataGridViewButtonColumn {
+                HeaderText = "AddAmount",
+                Text = "+",
+                Name = "btnAddAmount",
+                UseColumnTextForButtonValue = true,
+            };
+            dgv.Columns.Add(addAmountBtn);
+        }
+
         public static void LoadData(DataGridView dgv, string query, SqlConnection conn) {
             try {
                 if (conn.State == ConnectionState.Closed) {
@@ -49,6 +65,9 @@ namespace ExpenseManager.Helpers {
 
                     if (dt.Rows.Count > 0) {
                         dgv.DataSource = dt;
+                        dgv.Columns["FundID"].Visible = false;
+                        dgv.Columns["CategoryID"].Visible = false;
+                        dgv.Columns["PartnerID"].Visible = false;
                         dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     } else {
                         dgv.DataSource = null;

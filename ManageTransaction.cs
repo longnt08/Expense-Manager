@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 using ExpenseManager.Helpers;
 
 namespace ExpenseManager {
     public partial class ManageTransaction : UserControl {
 
         DatabaseHelper databaseHelper = new DatabaseHelper();
+        private int userID;
+
+        public void setUserID(int userID) {
+            this.userID = userID;
+        }
 
         public ManageTransaction() {
             InitializeComponent();
@@ -27,40 +26,41 @@ namespace ExpenseManager {
 
         }
 
-        private void label5_Click(object sender, EventArgs e) {
-
-        }
-
         private void createTransactionBtn_Click(object sender, EventArgs e) {
-            if(txtCategory.Text == "") {
-                MessageBox.Show("Please choose category!");
-            }
-            if(txtAmount.Text == "") {
-                MessageBox.Show("Please enter amount!");
+            if(cmbCategory.Text == "" || cmbFund.Text == "" || cmbPartner.Text == "" || 
+            txtAmount.Text == "") {
+                MessageBox.Show("Please fill all blank fields!");
+                return;
             }
             try {
                 using (SqlConnection conn = databaseHelper.GetConnection()) {
 
                     // lay CategoryID theo CategoryName
-                    string selectCategory = "SELECT CategoryID FROM Categories WHERE CategoryName = @CategoryName";
-                    int categoryId = databaseHelper.GetIdFromDatabase(selectCategory, "@Categoryname", txtCategory.Text.Trim(), conn);
+                    string selectCategory = "SELECT CategoryID FROM Category WHERE CategoryName = @CategoryName";
+                    int categoryId = databaseHelper.GetIdFromDatabase(selectCategory, "@CategoryName", cmbCategory.Text.Trim(), conn);
 
-                    // lay userId
-                    string selectUser = "SELECT UserID FROM Users WHERE username = @username";
-                    int userId = databaseHelper.GetIdFromDatabase(selectUser, "@username", Session.username, conn);
+                    // lay FundId theo FundName
+                    string selectFund = "SELECT FundID FROM FundAccount WHERE FundName = @FundName";
+                    int fundId = databaseHelper.GetIdFromDatabase(selectFund, "@FundName", cmbFund.Text.Trim(), conn);
+
+                    // lay PartnerID theo PartnerName
+                    string selectPartner = "SELECT PartnerID FROM BussinessPartner WHERE PartnerName = @partnerName";
+                    int partnerId = databaseHelper.GetIdFromDatabase(selectPartner, "@partnerName", cmbPartner.Text.Trim(), conn);
 
                     // insert transaction
                     DateTime today = DateTime.Now;
                     string insertQuery = "INSERT INTO Transactions " +
-                        "(UserID, CategoryID, Amount, TransactionDate, Note)" + 
-                        "VALUES(@UserID, @CategoryID, @Amount, @TransactionDate, @Note)";
+                        "(FundID, CategoryID, PartnerID, TransactionDate, Amount, TransactionDescription, Attachment) " +
+                        "VALUES(@FundID, @CategoryID, @PartnerID, @TransactionDate, @Amount, @Description, @Attachment)";
 
                     using (SqlCommand cmd = new SqlCommand(insertQuery, conn)) {
-                        cmd.Parameters.AddWithValue("@UserID", userId);
+                        cmd.Parameters.AddWithValue("@FundID", fundId);
                         cmd.Parameters.AddWithValue("@CategoryID", categoryId);
-                        cmd.Parameters.AddWithValue("@Amount", txtAmount.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PartnerID", partnerId);
                         cmd.Parameters.AddWithValue("@TransactionDate", today);
-                        cmd.Parameters.AddWithValue("@Note", txtNote.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Amount", txtAmount.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Description", txtDescription.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Attachment", txtAttachment.Text.Trim());
 
                         cmd.ExecuteNonQuery();
 
@@ -73,7 +73,7 @@ namespace ExpenseManager {
                 }
             } catch (Exception ex) {
                 MessageBox.Show("Error: " + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }   
+            }
         }
 
         private void ManageTransaction_Load(object sender, EventArgs e) {
@@ -148,7 +148,7 @@ namespace ExpenseManager {
         }
 
         private void filterTransactionBtn_Click(object sender, EventArgs e) {
-            try{
+            try {
                 using (SqlConnection conn = databaseHelper.GetConnection()) {
                     // lay CategoryID theo CategoryType
                     string query = "SELECT CategoryID FROM Categories WHERE CategoryType = @CategoryType";
@@ -165,9 +165,42 @@ namespace ExpenseManager {
                     FormHelper.AddButtonColumns(dgvRecentlyTransaction);
                     return;
                 }
-            } catch(Exception ex) {
+            } catch (Exception ex) {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void rdoCustomer_CheckedChanged(object sender, EventArgs e) {
+            if (rdoCustomer.Checked) {
+                LoadPartnerByType("Customer");
+            }
+        }
+
+        private void rdoSupplier_CheckedChanged(object sender, EventArgs e) {
+            if (rdoSupplier.Checked) {
+                LoadPartnerByType("Supplier");
+            }
+        }
+
+        private void rdoStaff_CheckedChanged(object sender, EventArgs e) {
+            if (rdoStaff.Checked) {
+                LoadPartnerByType("Staff");
+            }
+        }
+
+        private void LoadPartnerByType(string partnerType) {
+            List<string> partners = new List<string>();
+            using (SqlConnection conn = databaseHelper.GetConnection()) {
+                string query = "SELECT PartnerName FROM BussinessPartner WHERE PartnerType = @type";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@type", partnerType);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    partners.Add(reader["PartnerName"].ToString());
+                }
+            }
+            cmbPartner.DataSource = partners;
         }
     }
 }

@@ -13,9 +13,14 @@ using ExpenseManager.Helpers;
 namespace ExpenseManager {
     public partial class ManageGoal : UserControl {
 
-        DatabaseHelper databaseHelper = new DatabaseHelper();
+        //DatabaseHelper databaseHelper = new DatabaseHelper();
+        private int userID;
         public ManageGoal() {
             InitializeComponent();
+        }
+
+        public void setUserID(int userID) {
+            this.userID = userID;
         }
 
         private void createGoalBtn_Click(object sender, EventArgs e) {
@@ -27,102 +32,102 @@ namespace ExpenseManager {
                 MessageBox.Show("Please select a date after today.");
                 return;
             }
-            try {
-                using(SqlConnection conn = databaseHelper.GetConnection()) {
+            //try {
+            //    using(SqlConnection conn = databaseHelper.GetConnection()) {
+            //        // insert goal
+            //        string insertQuery = "INSERT INTO Goals " +
+            //            "(UserID, GoalName, TargetAmount, SavedAmount, Deadline, GoalStatus) " +
+            //            "VALUES(@UserID, @GoalName, @TargetAmount, @SavedAmount, @Deadline, @GoalStatus)";
 
-                    // lay userId
-                    string selectUser = "SELECT UserID FROM Users WHERE username = @username";
-                    int userId = databaseHelper.GetIdFromDatabase(selectUser, "@username", Session.username, conn);
+            //        using(SqlCommand cmd = new SqlCommand(insertQuery, conn)) {
+            //            cmd.Parameters.AddWithValue("@UserID", userID);
+            //            cmd.Parameters.AddWithValue("@GoalName", txtName.Text.Trim());
+            //            cmd.Parameters.AddWithValue("@TargetAmount", txtTargetAmout.Text.Trim());
+            //            cmd.Parameters.AddWithValue("@SavedAmount", txtSavedAmount.Text.Trim());
+            //            cmd.Parameters.AddWithValue("@Deadline", dtPickerDealine.Value.Date);
+            //            cmd.Parameters.AddWithValue("@GoalStatus", "In Progress");
 
-                    // insert budget
-                    string insertQuery = "INSERT INTO Goals " +
-                        "(UserID, GoalName, TargetAmount, SavedAmount, Deadline, GoalStatus) " +
-                        "VALUES(@UserID, @GoalName, @TargetAmount, @SavedAmount, @Deadline, @GoalStatus)";
+            //            cmd.ExecuteNonQuery();
 
-                    using(SqlCommand cmd = new SqlCommand(insertQuery, conn)) {
-                        cmd.Parameters.AddWithValue("@UserID", userId);
-                        cmd.Parameters.AddWithValue("@GoalName", txtName.Text.Trim());
-                        cmd.Parameters.AddWithValue("@TargetAmount", txtTargetAmout.Text.Trim());
-                        cmd.Parameters.AddWithValue("@SavedAmount", txtSavedAmount.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Deadline", dtPickerDealine.Value.Date);
-                        cmd.Parameters.AddWithValue("@GoalStatus", "In Progress");
-
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Goal created successfully!",
-                        "Information message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        FormHelper.LoadData(dgvGoals, "SELECT * FROM Goals", conn);
-                        FormHelper.AddButtonColumns(dgvGoals);
-                    }
-                }
-            } catch(Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //            MessageBox.Show("Goal created successfully!",
+            //            "Information message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            FormHelper.LoadData(dgvGoals, "SELECT * FROM Goals", conn);
+            //            FormHelper.AddAmountButton(dgvGoals);
+            //            FormHelper.AddButtonColumns(dgvGoals);
+            //        }
+            //    }
+            //} catch(Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
         }
 
         private void filterGoalsBtn_Click(object sender, EventArgs e) {
-            try{
-                using(SqlConnection conn = databaseHelper.GetConnection()) {
-                    string query = "SELECT * FROM Goals WHERE GoalStatus=@GoalStatus";
-                    using(SqlCommand cmd = new SqlCommand(query, conn)) {
-                        cmd.Parameters.AddWithValue("@GoalStatus", txtFilterGoals);
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
+            //try{
+            //    using(SqlConnection conn = databaseHelper.GetConnection()) {
+            //        string query = "SELECT * FROM Goals WHERE GoalStatus=@GoalStatus";
+            //        using(SqlCommand cmd = new SqlCommand(query, conn)) {
+            //            cmd.Parameters.AddWithValue("@GoalStatus", txtFilterGoals);
+            //            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            //            DataTable dt = new DataTable();
+            //            adapter.Fill(dt);
 
-                        dgvGoals.AllowUserToAddRows = false;
+            //            dgvGoals.AllowUserToAddRows = false;
 
-                        if(dt.Rows.Count > 0) {
-                            dgvGoals.DataSource = dt;
-                            dgvGoals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                        } else {
-                            dgvGoals.DataSource = null;
-                            dgvGoals.Rows.Clear();
-                        }
+            //            if(dt.Rows.Count > 0) {
+            //                dgvGoals.DataSource = dt;
+            //                dgvGoals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //            } else {
+            //                dgvGoals.DataSource = null;
+            //                dgvGoals.Rows.Clear();
+            //            }
 
-                        if (dgvGoals.Columns["btnUpdate"] != null)
-                            dgvGoals.Columns.Remove("btnUpdate");
-                        if (dgvGoals.Columns["btnDelete"] != null)
-                            dgvGoals.Columns.Remove("btnDelete");
+            //            if (dgvGoals.Columns["btnUpdate"] != null)
+            //                dgvGoals.Columns.Remove("btnUpdate");
+            //            if (dgvGoals.Columns["btnDelete"] != null)
+            //                dgvGoals.Columns.Remove("btnDelete");
+            //            if (dgvGoals.Columns["btnAddAmount"] != null)
+            //                dgvGoals.Columns.Remove("btnAddAmount");
 
-                        // Chỉ thêm nút nếu có dữ liệu
-                        FormHelper.AddButtonColumns(dgvGoals);
-                        return;
-                    }
-                }
-            } catch(Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //            // Chỉ thêm nút nếu có dữ liệu
+            //            FormHelper.AddAmountButton(dgvGoals);
+            //            FormHelper.AddButtonColumns(dgvGoals);
+            //            return;
+            //        }
+            //    }
+            //} catch(Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
         }
 
         private void ManageGoal_Load(object sender, EventArgs e) {
-            try {
-                using (SqlConnection conn = databaseHelper.GetConnection()) {
-                    // update GoalStatus
-                    conn.Open();
-                    string sql = @"
-                    UPDATE Goals
-                    SET GoalStatus = 'Completed'
-                    WHERE Deadline <= GETDATE() AND GoalStatus != 'Completed';
-                    ";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.ExecuteNonQuery();
+            //try {
+            //    using (SqlConnection conn = databaseHelper.GetConnection()) {
+            //        // update GoalStatus
+            //        conn.Open();
+            //        string sql = @"
+            //        UPDATE Goals
+            //        SET GoalStatus = 'Completed'
+            //        WHERE Deadline <= GETDATE() AND GoalStatus != 'Completed';
+            //        ";
+            //        SqlCommand cmd = new SqlCommand(sql, conn);
+            //        cmd.ExecuteNonQuery();
 
-                    // load du lieu ra dataGridView
-                    string query = "SELECT * FROM Goals";
-                    FormHelper.LoadData(dgvGoals, query, conn);
+            //        // load du lieu ra dataGridView
+            //        string query = "SELECT * FROM Goals";
+            //        FormHelper.LoadData(dgvGoals, query, conn);
 
-                    if (dgvGoals.Rows.Count > 0 && !dgvGoals.Rows[0].IsNewRow) {
-                        FormHelper.AddButtonColumns(dgvGoals);
-                    }
-                    dgvGoals.CellClick -= dgvGoals_CellClick;
-                    dgvGoals.CellClick += dgvGoals_CellClick;
+            //        if (dgvGoals.Rows.Count > 0 && !dgvGoals.Rows[0].IsNewRow) {
+            //            FormHelper.AddAmountButton(dgvGoals);
+            //            FormHelper.AddButtonColumns(dgvGoals);
+            //        }
+            //        dgvGoals.CellClick -= dgvGoals_CellClick;
+            //        dgvGoals.CellClick += dgvGoals_CellClick;
 
-                    conn.Close();
-                }
-            } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //        conn.Close();
+            //    }
+            //} catch (Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
         }
 
         private void dgvGoals_CellClick(object sender, DataGridViewCellEventArgs e) {
@@ -137,44 +142,64 @@ namespace ExpenseManager {
                 GoalID = Convert.ToInt32(cell.Value);
             }
 
+            // xu ly nut Add new amount
+            if(dgvGoals.Columns[e.ColumnIndex].Name == "btnAddAmount") {
+                dgvGoals.EndEdit();
+
+                AddAmountForm addAmountForm = new AddAmountForm(GoalID);
+                var result = addAmountForm.ShowDialog();
+
+                //if (result == DialogResult.OK) {
+                //    using (SqlConnection conn = databaseHelper.GetConnection()) {
+                //        FormHelper.LoadData(dgvGoals, "SELECT * FROM Goals", conn);
+                //    }
+                //    FormHelper.AddAmountButton(dgvGoals);
+                //    FormHelper.AddButtonColumns(dgvGoals);
+                //}
+            }
+
+            // xu ly nut Update
             if (dgvGoals.Columns[e.ColumnIndex].Name == "btnUpdate") {
                 dgvGoals.EndEdit();
 
                 UpdateGoalForm updateGoalForm = new UpdateGoalForm(GoalID);
                 var result = updateGoalForm.ShowDialog();
 
-                if (result == DialogResult.OK) {
-                    using (SqlConnection conn = databaseHelper.GetConnection()) {
-                        FormHelper.LoadData(dgvGoals, "SELECT * FROM Goals", conn);
-                    }
-                    FormHelper.AddButtonColumns(dgvGoals);             
-                }
+                //if (result == DialogResult.OK) {
+                //    using (SqlConnection conn = databaseHelper.GetConnection()) {
+                //        FormHelper.LoadData(dgvGoals, "SELECT * FROM Goals", conn);
+                //    }
+                //    FormHelper.AddAmountButton(dgvGoals);
+                //    FormHelper.AddButtonColumns(dgvGoals);             
+                //}
             }
-
+            
+            // xu ly nut Delete
             if (dgvGoals.Columns[e.ColumnIndex].Name == "btnDelete") {
                 DialogResult dialog = MessageBox.Show("Do you really want to delete this item?", "Confirm", MessageBoxButtons.YesNo);
 
-                if (dialog == DialogResult.Yes) {
-                    int goalId = Convert.ToInt32(cell.Value);
-                    try {
-                        using (SqlConnection conn = databaseHelper.GetConnection()) {
-                            string query = "DELETE FROM Goals WHERE GoalID = @GoalId";
-                            databaseHelper.deleteItem(query, "@GoalId", goalId, conn);
+                //if (dialog == DialogResult.Yes) {
+                //    int goalId = Convert.ToInt32(cell.Value);
+                //    try {
+                //        using (SqlConnection conn = databaseHelper.GetConnection()) {
+                //            string query = "DELETE FROM Goals WHERE GoalID = @GoalId";
+                //            databaseHelper.deleteItem(query, "@GoalId", goalId, conn);
 
-                            FormHelper.LoadData(dgvGoals, "SELECT * FROM Goals", conn);
-                            if (dgvGoals.Columns["btnUpdate"] != null)
-                                dgvGoals.Columns.Remove("btnUpdate");
-                            if (dgvGoals.Columns["btnDelete"] != null)
-                                dgvGoals.Columns.Remove("btnDelete");
+                //            FormHelper.LoadData(dgvGoals, "SELECT * FROM Goals", conn);
+                //            if (dgvGoals.Columns["btnUpdate"] != null)
+                //                dgvGoals.Columns.Remove("btnUpdate");
+                //            if (dgvGoals.Columns["btnDelete"] != null)
+                //                dgvGoals.Columns.Remove("btnDelete");
 
-                            // Chỉ thêm nút nếu có dữ liệu
-                            FormHelper.AddButtonColumns(dgvGoals);
-                            return;
-                        }
-                    } catch (Exception ex) {
-                        MessageBox.Show("Error: " + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                //            // Chỉ thêm nút nếu có dữ liệu
+                //            FormHelper.AddAmountButton(dgvGoals);
+                //            FormHelper.AddButtonColumns(dgvGoals);
+                //            return;
+                //        }
+                //    } catch (Exception ex) {
+                //        MessageBox.Show("Error: " + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    }
+                //}
             }
         }
     }

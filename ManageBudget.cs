@@ -63,22 +63,22 @@ namespace ExpenseManager {
         }
 
         private void ManageBudget_Load(object sender, EventArgs e) {
-            try{
-                using(SqlConnection conn = databaseHelper.GetConnection()) {
-                    string query = "SELECT * FROM Budgets";
-                    FormHelper.LoadData(dgvBudgets, query, conn);
+            //try{
+            //    using(SqlConnection conn = databaseHelper.GetConnection()) {
+            //        string query = "SELECT * FROM Budgets";
+            //        FormHelper.LoadData(dgvBudgets, query, conn);
 
-                    if(dgvBudgets.Rows.Count > 0 && !dgvBudgets.Rows[0].IsNewRow) {
-                        FormHelper.AddButtonColumns(dgvBudgets);
-                    }
-                    dgvBudgets.CellClick -= dgvBudgets_CellClick;
-                    dgvBudgets.CellClick += dgvBudgets_CellClick;
+            //        if(dgvBudgets.Rows.Count > 0 && !dgvBudgets.Rows[0].IsNewRow) {
+            //            FormHelper.AddButtonColumns(dgvBudgets);
+            //        }
+            //        dgvBudgets.CellClick -= dgvBudgets_CellClick;
+            //        dgvBudgets.CellClick += dgvBudgets_CellClick;
 
-                    conn.Close();
-                }
-            } catch(Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //        conn.Close();
+            //    }
+            //} catch(Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
         }
 
         private void dgvBudgets_CellClick(object sender, DataGridViewCellEventArgs e) {
@@ -115,49 +115,49 @@ namespace ExpenseManager {
                 DialogResult dialog = MessageBox.Show("Do you really want to delete this budget?", "Confirm", MessageBoxButtons.YesNo);
                 if (dialog == DialogResult.Yes) {
                     int budgetID = Convert.ToInt32(cell.Value);
-                    try {
-                        using (SqlConnection conn = databaseHelper.GetConnection()) {
-                            string query = "DELETE FROM Budgets WHERE BudgetID=@BudgetID";
-                            databaseHelper.deleteItem(query, "BudgetID", budgetID, conn);
+                    //try {
+                    //    using (SqlConnection conn = databaseHelper.GetConnection()) {
+                    //        string query = "DELETE FROM Budgets WHERE BudgetID=@BudgetID";
+                    //        databaseHelper.deleteItem(query, "BudgetID", budgetID, conn);
 
-                            FormHelper.LoadData(dgvBudgets, "SELECT * FROM Budgets", conn);
-                            if (dgvBudgets.Columns["btnUpdate"] != null)
-                                dgvBudgets.Columns.Remove("btnUpdate");
-                            if (dgvBudgets.Columns["btnDelete"] != null)
-                                dgvBudgets.Columns.Remove("btnDelete");
+                    //        FormHelper.LoadData(dgvBudgets, "SELECT * FROM Budgets", conn);
+                    //        if (dgvBudgets.Columns["btnUpdate"] != null)
+                    //            dgvBudgets.Columns.Remove("btnUpdate");
+                    //        if (dgvBudgets.Columns["btnDelete"] != null)
+                    //            dgvBudgets.Columns.Remove("btnDelete");
 
-                            // chi them nut neu co du lieu
-                            FormHelper.AddButtonColumns(dgvBudgets);
-                            return;
-                        }
-                    } catch (Exception ex) {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
+                    //        // chi them nut neu co du lieu
+                    //        FormHelper.AddButtonColumns(dgvBudgets);
+                    //        return;
+                    //    }
+                    //} catch (Exception ex) {
+                    //    MessageBox.Show("Error: " + ex.Message);
+                    //}
                 }
             }
         }
 
         private void filterBudgetBtn_Click(object sender, EventArgs e) {
-            try{
-                using(SqlConnection conn = databaseHelper.GetConnection()) {
-                    // lay CategoryID theo CategoryType
-                    string query = "SELECT CategoryID FROM Categories WHERE CategoryType=@CategoryType";
-                    int categoryID = databaseHelper.GetIdFromDatabase(query, "CategoryType", txtFilterBudgets.Text.Trim(), conn);
+            //try{
+            //    using(SqlConnection conn = databaseHelper.GetConnection()) {
+            //        // lay CategoryID theo CategoryType
+            //        string query = "SELECT CategoryID FROM Categories WHERE CategoryType=@CategoryType";
+            //        int categoryID = databaseHelper.GetIdFromDatabase(query, "CategoryType", txtFilterBudgets.Text.Trim(), conn);
 
-                    DataTable dt = databaseHelper.getDataFromFilters(categoryID, conn);
-                    FormHelper.loadDataAfterFilter(dgvBudgets, dt);
-                    if(dgvBudgets.Columns["btnUpdate"] != null)
-                        dgvBudgets.Columns.Remove("btnUpdate");
-                    if(dgvBudgets.Columns["bthDelete"] != null)
-                        dgvBudgets.Columns.Remove("btnDelete");
+            //        DataTable dt = databaseHelper.getDataFromFilters(categoryID, conn);
+            //        FormHelper.loadDataAfterFilter(dgvBudgets, dt);
+            //        if(dgvBudgets.Columns["btnUpdate"] != null)
+            //            dgvBudgets.Columns.Remove("btnUpdate");
+            //        if(dgvBudgets.Columns["bthDelete"] != null)
+            //            dgvBudgets.Columns.Remove("btnDelete");
 
-                    // chi them nut neu co du lieu
-                    FormHelper.AddButtonColumns(dgvBudgets);
-                    return;
-                }
-            } catch(Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //        // chi them nut neu co du lieu
+            //        FormHelper.AddButtonColumns(dgvBudgets);
+            //        return;
+            //    }
+            //} catch(Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
         }
     }
 }

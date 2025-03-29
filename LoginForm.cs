@@ -34,8 +34,8 @@ namespace ExpenseManager {
 
         private void loginSignupBtn_Click(object sender, EventArgs e) {
             RegisterForm registerForm = new RegisterForm();
-            registerForm.ShowDialog();
-            this.Close();
+            registerForm.Show();
+            this.Hide();
         }
 
         private void loginShowPass_CheckedChanged(object sender, EventArgs e) {
@@ -43,7 +43,7 @@ namespace ExpenseManager {
         }
 
         private void loginBtn_Click(object sender, EventArgs e) {
-            if(txtLoginUsername.Text == "" || txtLoginPassword.Text == "") {
+            if (txtLoginUsername.Text == "" || txtLoginPassword.Text == "") {
                 MessageBox.Show("Please fill all blank fields");
             } else {
                 try {
@@ -51,7 +51,7 @@ namespace ExpenseManager {
                     using (SqlConnection conn = dbHelper.GetConnection()) {
                         conn.Open();
 
-                        string selectQuery = "SELECT *FROM Users WHERE username=@username AND passwordHash=@password";
+                        string selectQuery = "SELECT * FROM Users WHERE Username=@username AND PasswordHash=@password";
                         using (SqlCommand cmd = new SqlCommand(selectQuery, conn)) {
                             cmd.Parameters.AddWithValue("@username", txtLoginUsername.Text.Trim());
                             cmd.Parameters.AddWithValue("@password", txtLoginPassword.Text.Trim());
@@ -66,8 +66,8 @@ namespace ExpenseManager {
                                     MessageBox.Show("Login successfully");
 
                                     MainForm mainForm = new MainForm(userID, username, email, dateCreated);
-                                    mainForm.ShowDialog();
-                                    this.Close();
+                                    mainForm.Show();
+                                    this.Hide();
                                 } else {
                                     MessageBox.Show("Incorrect username or password");
                                 }
@@ -76,7 +76,7 @@ namespace ExpenseManager {
                     }
                 } catch (Exception ex) {
                     MessageBox.Show("Error: " + ex);
-                } 
+                }
             }
         }
     }
