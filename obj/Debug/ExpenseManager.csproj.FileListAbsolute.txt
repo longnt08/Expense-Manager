@@ -27,3 +27,32 @@ C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.exe
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.pdb
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.ManageDebt.resources
 C:\Users\ADMIN\source\repos\ExpenseManager\obj\Debug\ExpenseManager.AddFundForm.resources
+E:\Bài tập lớn .NET\Expense-Manager\bin\Debug\ExpenseManager.exe.config
+E:\Bài tập lớn .NET\Expense-Manager\bin\Debug\ExpenseManager.exe
+E:\Bài tập lớn .NET\Expense-Manager\bin\Debug\ExpenseManager.pdb
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.csproj.AssemblyReference.cache
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.AddAmountForm.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.AddCash.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.AddFundForm.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.AddMainFund.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.AddPettyFund.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.AddSavings.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.ManageAccount.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.ManageBudget.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.ManageDebt.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.ManageFund.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.ManageGoal.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.ManageSetting.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.ManageTransaction.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.Dashboard.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.frmLogin.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.MainForm.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.Properties.Resources.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.RegisterForm.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.UpdateBudget.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.UpdateGoalForm.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.UpdateTransactionForm.resources
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.csproj.GenerateResource.cache
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.csproj.CoreCompileInputs.cache
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.exe
+E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.pdb

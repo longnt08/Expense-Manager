@@ -75,7 +75,7 @@
             this.label1.Location = new System.Drawing.Point(4, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 16);
+            this.label1.Size = new System.Drawing.Size(167, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Expense Manager";
             // 
@@ -88,7 +88,7 @@
             this.labelExitMain.Location = new System.Drawing.Point(1071, 8);
             this.labelExitMain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelExitMain.Name = "labelExitMain";
-            this.labelExitMain.Size = new System.Drawing.Size(15, 16);
+            this.labelExitMain.Size = new System.Drawing.Size(22, 24);
             this.labelExitMain.TabIndex = 1;
             this.labelExitMain.Text = "X";
             this.labelExitMain.Click += new System.EventHandler(this.labelExitMain_Click);
@@ -100,7 +100,7 @@
             this.MainFormUsername.ForeColor = System.Drawing.Color.White;
             this.MainFormUsername.Location = new System.Drawing.Point(524, 8);
             this.MainFormUsername.Name = "MainFormUsername";
-            this.MainFormUsername.Size = new System.Drawing.Size(108, 19);
+            this.MainFormUsername.Size = new System.Drawing.Size(164, 29);
             this.MainFormUsername.TabIndex = 1;
             this.MainFormUsername.Text = "Welcome user";
             // 
@@ -352,7 +352,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.panel3);

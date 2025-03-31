@@ -16,16 +16,16 @@ namespace ExpenseManager {
         private int userID;
         private string username;
         private string email;
-        private DateTime dateCreated;
+        private DateTime CreatedAt;
         public frmLogin() {
             InitializeComponent();
         }
-        public frmLogin(int userID, string username, string email, DateTime dateCreated) {
+        public frmLogin(int userID, string username, string email, DateTime CreatedAt) {
             InitializeComponent();
             this.userID = userID;
             this.username = username;
             this.email = email;
-            this.dateCreated = dateCreated;
+            this.CreatedAt = CreatedAt;
         }
 
         private void Exit_Click(object sender, EventArgs e) {
@@ -61,11 +61,11 @@ namespace ExpenseManager {
                                     userID = reader.GetInt32(reader.GetOrdinal("UserID"));
                                     username = reader.GetString(reader.GetOrdinal("username"));
                                     email = reader.GetString(reader.GetOrdinal("email"));
-                                    dateCreated = reader.GetDateTime(reader.GetOrdinal("dateCreated"));
+                                    CreatedAt = reader.GetDateTime(reader.GetOrdinal("CreatedAt"));
 
                                     MessageBox.Show("Login successfully");
 
-                                    MainForm mainForm = new MainForm(userID, username, email, dateCreated);
+                                    MainForm mainForm = new MainForm(userID, username, email, CreatedAt);
                                     mainForm.Show();
                                     this.Hide();
                                 } else {
