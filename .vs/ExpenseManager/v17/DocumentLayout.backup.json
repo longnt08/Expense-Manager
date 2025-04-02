@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\ak550\\",
+  "WorkspaceRootPath": "D:\\ak550\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|e:\\ak550\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\managetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:managetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|E:\\ak550\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\managetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:managetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,45 +22,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "E:\\ak550\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "E:\\ak550\\MainForm.cs [Design]",
-              "RelativeToolTip": "MainForm.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "ManageTransaction.cs [Design]",
+              "DocumentMoniker": "D:\\ak550\\ManageTransaction.cs",
+              "RelativeDocumentMoniker": "ManageTransaction.cs",
+              "ToolTip": "D:\\ak550\\ManageTransaction.cs [Design]*",
+              "RelativeToolTip": "ManageTransaction.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T06:29:25.033Z",
+              "WhenOpened": "2025-04-02T14:12:19.983Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ManageTransaction.cs",
+              "DocumentMoniker": "D:\\ak550\\ManageTransaction.cs",
+              "RelativeDocumentMoniker": "ManageTransaction.cs",
+              "ToolTip": "D:\\ak550\\ManageTransaction.cs*",
+              "RelativeToolTip": "ManageTransaction.cs*",
+              "ViewState": "AgIAACMBAAAAAAAAAAAIwDwBAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T14:12:36.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainForm.cs",
-              "DocumentMoniker": "E:\\ak550\\MainForm.cs",
+              "DocumentMoniker": "D:\\ak550\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "E:\\ak550\\MainForm.cs",
+              "ToolTip": "D:\\ak550\\MainForm.cs",
               "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAAAIAAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAABQBAAAAAAAAAAAmwEUBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T07:18:14.832Z",
               "EditorCaption": ""

@@ -14,6 +14,14 @@ namespace ExpenseManager {
         private string email;
         private DateTime dateCreated;
 
+        //AI section starts:
+        public class NotificationItem
+        {
+            public string Message { get; set; }
+            public int TransactionID { get; set; }
+        }
+        //AI section ends:
+
         public MainForm() {
             InitializeComponent();
             //manageAccount1.LogoutClicked += ManageAccount1_LogoutClicked;
@@ -100,7 +108,7 @@ namespace ExpenseManager {
 
             var transaction = new
             {
-                Amount = 23000000,
+                Amount = 230000000,
                 FundNameEncoded = 0,
                 FundTypeEncoded = 0,
                 CategoryNameEncoded = 1,
@@ -126,7 +134,7 @@ namespace ExpenseManager {
 
                     if (isAnomaly)
                     {
-                        ShowPopupNotification("Suspicious");
+                        ShowPopupNotification("Suspicious transaction detected.");
                     }
                     else
                     {
@@ -183,7 +191,7 @@ namespace ExpenseManager {
         }
 
         //Start of AI integrated notification center
-        private List<string> notifications = new List<string>();
+        private List<NotificationItem> notifications = new List<NotificationItem>();
         private Panel notificationPopup;
         private Timer popupTimer;
         private Panel notificationDropdown;
@@ -234,7 +242,8 @@ namespace ExpenseManager {
             notificationPopup.Visible = false;
         }
 
-        private void ShowPopupNotification(string message)
+        //AI section alert: Change this function to public, allowing access via control.
+        public void ShowPopupNotification(string message, int transactionID = -1)
         {
             popupLabel.Text = message;
             notificationPopup.Location = new Point(this.Width - notificationPopup.Width - 20, 40);
@@ -242,7 +251,7 @@ namespace ExpenseManager {
             notificationPopup.Visible = true;
             popupTimer.Start();
 
-            notifications.Add(message);
+            notifications.Add(new NotificationItem { Message = message, TransactionID = transactionID });
         }
 
         private void notificationBell_Click(object sender, EventArgs e)
@@ -256,20 +265,44 @@ namespace ExpenseManager {
             notificationDropdown.Controls.Clear();
             int y = 5;
 
-            foreach (string msg in notifications)
+            foreach (var notif in notifications)
             {
-                Label lbl = new Label
+                var panel = new Panel
                 {
-                    Text = msg,
-                    AutoSize = false,
                     Width = notificationDropdown.Width - 10,
                     Height = 30,
                     Location = new Point(5, y),
-                    BackColor = Color.Lavender,
-                    ForeColor = Color.Black,
-                    Padding = new Padding(5)
+                    BackColor = Color.Lavender
                 };
-                notificationDropdown.Controls.Add(lbl);
+
+                var lbl = new Label
+                {
+                    Text = notif.Message,
+                    AutoSize = false,
+                    Width = panel.Width - 50,
+                    Height = 30,
+                    Location = new Point(5, 0),
+                    Padding = new Padding(5),
+                    ForeColor = Color.Black
+                };
+                panel.Controls.Add(lbl);
+
+                // Add view link
+                if (notif.TransactionID > 0)
+                {
+                    var link = new LinkLabel
+                    {
+                        Text = "View",
+                        Location = new Point(panel.Width - 45, 5),
+                        Width = 40,
+                        Height = 20,
+                        Tag = notif.TransactionID
+                    };
+                    link.Click += ViewTransaction_Click;
+                    panel.Controls.Add(link);
+                }
+
+                notificationDropdown.Controls.Add(panel);
                 y += 35;
             }
 
@@ -277,5 +310,16 @@ namespace ExpenseManager {
             notificationDropdown.BringToFront();
             notificationDropdown.Visible = true;
         }
+
+        private void ViewTransaction_Click(object sender, EventArgs e)
+        {
+            var link = sender as LinkLabel;
+            if (link != null && link.Tag is int transactionId)
+            {
+                manageTransaction1.HighlightTransaction(transactionId);
+                manageTransactionBtn.PerformClick(); // show the ManageTransaction panel
+            }
+        }
+
     }
 }

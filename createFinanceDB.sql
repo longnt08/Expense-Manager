@@ -51,6 +51,8 @@ CREATE TABLE Transactions (
     Attachment NVARCHAR(255) NULL
 );
 
+select * from Transactions
+
 -- Quản lý công nợ
 CREATE TABLE Debt (
     DebtID INT PRIMARY KEY IDENTITY(1,1),
