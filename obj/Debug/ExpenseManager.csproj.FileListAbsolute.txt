@@ -56,3 +56,32 @@ E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.csproj.Generat
 E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.csproj.CoreCompileInputs.cache
 E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.exe
 E:\Bài tập lớn .NET\Expense-Manager\obj\Debug\ExpenseManager.pdb
+D:\ak550\bin\Debug\ExpenseManager.exe.config
+D:\ak550\bin\Debug\ExpenseManager.exe
+D:\ak550\bin\Debug\ExpenseManager.pdb
+D:\ak550\obj\Debug\ExpenseManager.csproj.AssemblyReference.cache
+D:\ak550\obj\Debug\ExpenseManager.AddAmountForm.resources
+D:\ak550\obj\Debug\ExpenseManager.AddCash.resources
+D:\ak550\obj\Debug\ExpenseManager.AddFundForm.resources
+D:\ak550\obj\Debug\ExpenseManager.AddMainFund.resources
+D:\ak550\obj\Debug\ExpenseManager.AddPettyFund.resources
+D:\ak550\obj\Debug\ExpenseManager.AddSavings.resources
+D:\ak550\obj\Debug\ExpenseManager.ManageAccount.resources
+D:\ak550\obj\Debug\ExpenseManager.ManageBudget.resources
+D:\ak550\obj\Debug\ExpenseManager.ManageDebt.resources
+D:\ak550\obj\Debug\ExpenseManager.ManageFund.resources
+D:\ak550\obj\Debug\ExpenseManager.ManageGoal.resources
+D:\ak550\obj\Debug\ExpenseManager.ManageSetting.resources
+D:\ak550\obj\Debug\ExpenseManager.ManageTransaction.resources
+D:\ak550\obj\Debug\ExpenseManager.Dashboard.resources
+D:\ak550\obj\Debug\ExpenseManager.frmLogin.resources
+D:\ak550\obj\Debug\ExpenseManager.MainForm.resources
+D:\ak550\obj\Debug\ExpenseManager.Properties.Resources.resources
+D:\ak550\obj\Debug\ExpenseManager.RegisterForm.resources
+D:\ak550\obj\Debug\ExpenseManager.UpdateBudget.resources
+D:\ak550\obj\Debug\ExpenseManager.UpdateGoalForm.resources
+D:\ak550\obj\Debug\ExpenseManager.UpdateTransactionForm.resources
+D:\ak550\obj\Debug\ExpenseManager.csproj.GenerateResource.cache
+D:\ak550\obj\Debug\ExpenseManager.csproj.CoreCompileInputs.cache
+D:\ak550\obj\Debug\ExpenseManager.exe
+D:\ak550\obj\Debug\ExpenseManager.pdb

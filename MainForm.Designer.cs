@@ -41,6 +41,7 @@
             this.dashboardBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bell_icon = new System.Windows.Forms.PictureBox();
             this.manageDebt1 = new ExpenseManager.ManageDebt();
             this.manageTransaction1 = new ExpenseManager.ManageTransaction();
             this.manageGoal1 = new ExpenseManager.ManageGoal();
@@ -52,12 +53,14 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bell_icon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.bell_icon);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.labelExitMain);
             this.panel1.Controls.Add(this.MainFormUsername);
@@ -75,7 +78,7 @@
             this.label1.Location = new System.Drawing.Point(4, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 24);
+            this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Expense Manager";
             // 
@@ -88,7 +91,7 @@
             this.labelExitMain.Location = new System.Drawing.Point(1071, 8);
             this.labelExitMain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelExitMain.Name = "labelExitMain";
-            this.labelExitMain.Size = new System.Drawing.Size(22, 24);
+            this.labelExitMain.Size = new System.Drawing.Size(15, 16);
             this.labelExitMain.TabIndex = 1;
             this.labelExitMain.Text = "X";
             this.labelExitMain.Click += new System.EventHandler(this.labelExitMain_Click);
@@ -100,7 +103,7 @@
             this.MainFormUsername.ForeColor = System.Drawing.Color.White;
             this.MainFormUsername.Location = new System.Drawing.Point(524, 8);
             this.MainFormUsername.Name = "MainFormUsername";
-            this.MainFormUsername.Size = new System.Drawing.Size(164, 29);
+            this.MainFormUsername.Size = new System.Drawing.Size(108, 19);
             this.MainFormUsername.TabIndex = 1;
             this.MainFormUsername.Text = "Welcome user";
             // 
@@ -301,6 +304,18 @@
             this.panel3.Size = new System.Drawing.Size(875, 557);
             this.panel3.TabIndex = 2;
             // 
+            // bell_icon
+            // 
+            this.bell_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bell_icon.Image = ((System.Drawing.Image)(resources.GetObject("bell_icon.Image")));
+            this.bell_icon.Location = new System.Drawing.Point(224, 6);
+            this.bell_icon.Name = "bell_icon";
+            this.bell_icon.Size = new System.Drawing.Size(30, 30);
+            this.bell_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bell_icon.TabIndex = 2;
+            this.bell_icon.TabStop = false;
+            this.bell_icon.Click += new System.EventHandler(this.notificationBell_Click);
+            // 
             // manageDebt1
             // 
             this.manageDebt1.Location = new System.Drawing.Point(0, 0);
@@ -352,7 +367,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.panel3);
@@ -370,6 +385,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bell_icon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -399,5 +415,6 @@
         private ManageFund manageFund1;
         private System.Windows.Forms.Button manageDebtBtn;
         private ManageDebt manageDebt1;
+        private System.Windows.Forms.PictureBox bell_icon;
     }
 }
