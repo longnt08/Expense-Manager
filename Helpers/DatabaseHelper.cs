@@ -18,7 +18,8 @@ namespace ExpenseManager.Helpers {
             //} else {
             //    _connectionString = cnn.ConnectionString;
             //}
-            _connectionString = "Server=DESKTOP-4R9H3K4\\SQLEXPRESS;Database=OrgFinanceDB;User Id=sa;Password=danhst.nguyen;";
+            //_connectionString = "Server=DESKTOP-4R9H3K4\\SQLEXPRESS;Database=OrgFinanceDB;User Id=sa;Password=danhst.nguyen;";
+            _connectionString = "Server=LAPTOP-SIASPIGN\\SQLEXPRESS02;Database=OrgFinanceDB;User Id=sa;Password=sontung2004;";
 
         }
         public SqlConnection GetConnection() {

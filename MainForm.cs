@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Net.Http;
+using System.Text;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace ExpenseManager {
     public partial class MainForm : Form {
@@ -88,10 +91,53 @@ namespace ExpenseManager {
             //manageAccount1.setData(userID, username, email, dateCreated);
         }
 
-        private void BtnSetting_Click(object sender, EventArgs e) {
+        //Part of AI integrated notification center
+        private async void BtnSetting_Click(object sender, EventArgs e)
+        {
             //ManageSetting manageSettingForm = new ManageSetting();
             //manageSettingForm.ShowDialog();
-            ShowPopupNotification("A new setting was applied.");
+            //ShowPopupNotification("A new setting was applied.");
+
+            var transaction = new
+            {
+                Amount = 23000000,
+                FundNameEncoded = 0,
+                FundTypeEncoded = 0,
+                CategoryNameEncoded = 1,
+                CategoryTypeEncoded = 1,
+                PartnerNameEncoded = 2,
+                PartnerTypeEncoded = 0
+            };
+
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://127.0.0.1:5000");
+                    var json = Newtonsoft.Json.JsonConvert.SerializeObject(transaction);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    var response = await client.PostAsync("/predict", content);
+                    response.EnsureSuccessStatusCode();
+
+                    var responseString = await response.Content.ReadAsStringAsync();
+                    dynamic result = Newtonsoft.Json.JsonConvert.DeserializeObject(responseString);
+                    bool isAnomaly = result.is_anomaly == 1;
+
+                    if (isAnomaly)
+                    {
+                        ShowPopupNotification("Suspicious");
+                    }
+                    else
+                    {
+                        ShowPopupNotification("Safe");
+                    }
+
+                }
+            } catch (Exception ex)
+            {
+                ShowPopupNotification("Error: " + ex.Message);
+            }
         }
 
         private void SignoutBtn_Click(object sender, EventArgs e) {
@@ -231,7 +277,5 @@ namespace ExpenseManager {
             notificationDropdown.BringToFront();
             notificationDropdown.Visible = true;
         }
-
-
     }
 }
