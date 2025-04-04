@@ -34,7 +34,7 @@ namespace ExpenseManager {
             this.email = email;
             this.dateCreated = dateCreated;
 
-            //dashboard1.LoadData(userID);
+            dashboard1.LoadData();
         }
 
         private void labelExitMain_Click(object sender, EventArgs e) {

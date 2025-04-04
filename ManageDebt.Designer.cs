@@ -23,23 +23,34 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.addDebtBtn = new System.Windows.Forms.Button();
-            this.repayBtn = new System.Windows.Forms.Button();
+            this.viewLoanBtn = new System.Windows.Forms.Button();
             this.addLoanBtn = new System.Windows.Forms.Button();
             this.collectBtn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.viewDebtBtn = new System.Windows.Forms.Button();
-            this.viewLoanBtn = new System.Windows.Forms.Button();
+            this.repayBtn = new System.Windows.Forms.Button();
+            this.addDebtBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.statusChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.typeChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,27 +62,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(843, 226);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Location = new System.Drawing.Point(15, 247);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(843, 295);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.panel3.Controls.Add(this.viewDebtBtn);
-            this.panel3.Controls.Add(this.repayBtn);
-            this.panel3.Controls.Add(this.addDebtBtn);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(18, 13);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(390, 200);
-            this.panel3.TabIndex = 1;
             // 
             // panel4
             // 
@@ -86,81 +76,21 @@
             this.panel4.Size = new System.Drawing.Size(390, 200);
             this.panel4.TabIndex = 2;
             // 
-            // label1
+            // viewLoanBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(135, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TOTAL DEBT";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(136, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "TOTAL LOAN";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(147, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "100000 $";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(158, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "100000 $";
-            // 
-            // addDebtBtn
-            // 
-            this.addDebtBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.addDebtBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addDebtBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addDebtBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addDebtBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addDebtBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addDebtBtn.ForeColor = System.Drawing.Color.White;
-            this.addDebtBtn.Location = new System.Drawing.Point(162, 151);
-            this.addDebtBtn.Name = "addDebtBtn";
-            this.addDebtBtn.Size = new System.Drawing.Size(89, 36);
-            this.addDebtBtn.TabIndex = 11;
-            this.addDebtBtn.Text = "Add";
-            this.addDebtBtn.UseVisualStyleBackColor = false;
-            // 
-            // repayBtn
-            // 
-            this.repayBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.repayBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.repayBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.repayBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.repayBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.repayBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.repayBtn.ForeColor = System.Drawing.Color.White;
-            this.repayBtn.Location = new System.Drawing.Point(280, 151);
-            this.repayBtn.Name = "repayBtn";
-            this.repayBtn.Size = new System.Drawing.Size(89, 36);
-            this.repayBtn.TabIndex = 12;
-            this.repayBtn.Text = "Repay";
-            this.repayBtn.UseVisualStyleBackColor = false;
+            this.viewLoanBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.viewLoanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewLoanBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.viewLoanBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.viewLoanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewLoanBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewLoanBtn.ForeColor = System.Drawing.Color.White;
+            this.viewLoanBtn.Location = new System.Drawing.Point(35, 151);
+            this.viewLoanBtn.Name = "viewLoanBtn";
+            this.viewLoanBtn.Size = new System.Drawing.Size(89, 36);
+            this.viewLoanBtn.TabIndex = 15;
+            this.viewLoanBtn.Text = "View";
+            this.viewLoanBtn.UseVisualStyleBackColor = false;
             // 
             // addLoanBtn
             // 
@@ -194,6 +124,41 @@
             this.collectBtn.Text = "Collect";
             this.collectBtn.UseVisualStyleBackColor = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(158, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 19);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "100000 $";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(136, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "TOTAL LOAN";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.panel3.Controls.Add(this.viewDebtBtn);
+            this.panel3.Controls.Add(this.repayBtn);
+            this.panel3.Controls.Add(this.addDebtBtn);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(18, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(390, 200);
+            this.panel3.TabIndex = 1;
+            // 
             // viewDebtBtn
             // 
             this.viewDebtBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
@@ -210,21 +175,101 @@
             this.viewDebtBtn.Text = "View";
             this.viewDebtBtn.UseVisualStyleBackColor = false;
             // 
-            // viewLoanBtn
+            // repayBtn
             // 
-            this.viewLoanBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.viewLoanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viewLoanBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.viewLoanBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.viewLoanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewLoanBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewLoanBtn.ForeColor = System.Drawing.Color.White;
-            this.viewLoanBtn.Location = new System.Drawing.Point(35, 151);
-            this.viewLoanBtn.Name = "viewLoanBtn";
-            this.viewLoanBtn.Size = new System.Drawing.Size(89, 36);
-            this.viewLoanBtn.TabIndex = 15;
-            this.viewLoanBtn.Text = "View";
-            this.viewLoanBtn.UseVisualStyleBackColor = false;
+            this.repayBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.repayBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.repayBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.repayBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.repayBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.repayBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repayBtn.ForeColor = System.Drawing.Color.White;
+            this.repayBtn.Location = new System.Drawing.Point(280, 151);
+            this.repayBtn.Name = "repayBtn";
+            this.repayBtn.Size = new System.Drawing.Size(89, 36);
+            this.repayBtn.TabIndex = 12;
+            this.repayBtn.Text = "Repay";
+            this.repayBtn.UseVisualStyleBackColor = false;
+            // 
+            // addDebtBtn
+            // 
+            this.addDebtBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.addDebtBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addDebtBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addDebtBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addDebtBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addDebtBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addDebtBtn.ForeColor = System.Drawing.Color.White;
+            this.addDebtBtn.Location = new System.Drawing.Point(162, 151);
+            this.addDebtBtn.Name = "addDebtBtn";
+            this.addDebtBtn.Size = new System.Drawing.Size(89, 36);
+            this.addDebtBtn.TabIndex = 11;
+            this.addDebtBtn.Text = "Add";
+            this.addDebtBtn.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(147, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 19);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "100000 $";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(135, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TOTAL DEBT";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.typeChart);
+            this.panel2.Controls.Add(this.statusChart);
+            this.panel2.Location = new System.Drawing.Point(15, 247);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(843, 295);
+            this.panel2.TabIndex = 1;
+            // 
+            // statusChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.statusChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.statusChart.Legends.Add(legend2);
+            this.statusChart.Location = new System.Drawing.Point(3, 7);
+            this.statusChart.Name = "statusChart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.statusChart.Series.Add(series2);
+            this.statusChart.Size = new System.Drawing.Size(490, 285);
+            this.statusChart.TabIndex = 0;
+            this.statusChart.Text = "chart1";
+            // 
+            // typeChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.typeChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.typeChart.Legends.Add(legend1);
+            this.typeChart.Location = new System.Drawing.Point(470, 7);
+            this.typeChart.Name = "typeChart";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.typeChart.Series.Add(series1);
+            this.typeChart.Size = new System.Drawing.Size(373, 285);
+            this.typeChart.TabIndex = 1;
+            this.typeChart.Text = "chart2";
             // 
             // ManageDebt
             // 
@@ -234,10 +279,13 @@
             this.Name = "ManageDebt";
             this.Size = new System.Drawing.Size(875, 557);
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.statusChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +306,7 @@
         private System.Windows.Forms.Button addDebtBtn;
         private System.Windows.Forms.Button viewLoanBtn;
         private System.Windows.Forms.Button viewDebtBtn;
+        private System.Windows.Forms.DataVisualization.Charting.Chart statusChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart typeChart;
     }
 }

@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.addSavingsBtn = new System.Windows.Forms.Button();
@@ -41,11 +42,15 @@
             this.mainBankAmountLbl = new System.Windows.Forms.Label();
             this.mainBankLbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.centerBalanceLbl = new System.Windows.Forms.Label();
+            this.fundChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fundChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -259,10 +264,34 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.centerBalanceLbl);
+            this.panel2.Controls.Add(this.fundChart);
             this.panel2.Location = new System.Drawing.Point(28, 325);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(820, 219);
             this.panel2.TabIndex = 1;
+            // 
+            // centerBalanceLbl
+            // 
+            this.centerBalanceLbl.BackColor = System.Drawing.Color.Transparent;
+            this.centerBalanceLbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.centerBalanceLbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.centerBalanceLbl.Location = new System.Drawing.Point(40, 20);
+            this.centerBalanceLbl.Name = "centerBalanceLbl";
+            this.centerBalanceLbl.Size = new System.Drawing.Size(100, 40);
+            this.centerBalanceLbl.TabIndex = 3;
+            this.centerBalanceLbl.Text = "label1";
+            this.centerBalanceLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // fundChart
+            // 
+            legend7.Name = "Legend1";
+            this.fundChart.Legends.Add(legend7);
+            this.fundChart.Location = new System.Drawing.Point(0, 3);
+            this.fundChart.Name = "fundChart";
+            this.fundChart.Size = new System.Drawing.Size(672, 216);
+            this.fundChart.TabIndex = 2;
+            this.fundChart.Text = "chart1";
             // 
             // ManageFund
             // 
@@ -281,6 +310,8 @@
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fundChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,5 +336,7 @@
         private System.Windows.Forms.Button addSavingsBtn;
         private System.Windows.Forms.Button addPettyCashBtn;
         private System.Windows.Forms.Button addCashBtn;
+        private System.Windows.Forms.DataVisualization.Charting.Chart fundChart;
+        private System.Windows.Forms.Label centerBalanceLbl;
     }
 }

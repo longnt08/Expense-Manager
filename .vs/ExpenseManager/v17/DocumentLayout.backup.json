@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "D:\\ak550\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\managetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:managetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\managedebt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:managedebt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\managetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:managetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\managedebt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:managedebt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ManageTransaction.cs [Design]",
-              "DocumentMoniker": "D:\\ak550\\ManageTransaction.cs",
-              "RelativeDocumentMoniker": "ManageTransaction.cs",
-              "ToolTip": "D:\\ak550\\ManageTransaction.cs [Design]*",
-              "RelativeToolTip": "ManageTransaction.cs [Design]*",
+              "DocumentIndex": 0,
+              "Title": "ManageDebt.cs [Design]",
+              "DocumentMoniker": "D:\\ak550\\ManageDebt.cs",
+              "RelativeDocumentMoniker": "ManageDebt.cs",
+              "ToolTip": "D:\\ak550\\ManageDebt.cs [Design]",
+              "RelativeToolTip": "ManageDebt.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T14:12:19.983Z",
+              "WhenOpened": "2025-04-04T15:35:58.354Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ManageTransaction.cs",
-              "DocumentMoniker": "D:\\ak550\\ManageTransaction.cs",
-              "RelativeDocumentMoniker": "ManageTransaction.cs",
-              "ToolTip": "D:\\ak550\\ManageTransaction.cs*",
-              "RelativeToolTip": "ManageTransaction.cs*",
-              "ViewState": "AgIAACMBAAAAAAAAAAAIwDwBAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T14:12:36.738Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\ak550\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "D:\\ak550\\MainForm.cs",
-              "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AgIAABQBAAAAAAAAAAAmwEUBAAAAAAAAAAAAAA==",
+              "Title": "ManageDebt.cs",
+              "DocumentMoniker": "D:\\ak550\\ManageDebt.cs",
+              "RelativeDocumentMoniker": "ManageDebt.cs",
+              "ToolTip": "D:\\ak550\\ManageDebt.cs",
+              "RelativeToolTip": "ManageDebt.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowFUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T07:18:14.832Z",
+              "WhenOpened": "2025-04-04T15:36:02.823Z",
               "EditorCaption": ""
             }
           ]

@@ -39,6 +39,8 @@ CREATE TABLE BussinessPartner (
     Email NVARCHAR(100)
 );
 
+select * from BussinessPartner
+
 -- Giao dịch tài chính
 CREATE TABLE Transactions (
     TransactionID INT PRIMARY KEY IDENTITY(1,1),
@@ -64,6 +66,8 @@ CREATE TABLE Debt (
     DueDate DATE,
     DebtStatus NVARCHAR(50) -- Chưa thanh toán / Đã thanh toán
 );
+
+select * from Debt
 
 -- Quản lý ngân sách theo năm / quý / tháng
 CREATE TABLE Budget (
@@ -104,3 +108,59 @@ INSERT INTO Category (CategoryName, CategoryType) VALUES
 ('Office Supplies', 'Expense'),
 ('Loan Payment', 'Expense'),
 ('Tax Expense', 'Expense')
+
+SELECT 
+    FORMAT(TransactionDate, 'yyyy-MM') AS Month,
+    SUM(CASE WHEN c.CategoryType = 'Income' THEN t.Amount ELSE 0 END) AS TotalIncome,
+    SUM(CASE WHEN c.CategoryType = 'Expense' THEN t.Amount ELSE 0 END) AS TotalExpense
+FROM Transactions t
+JOIN Category c ON t.CategoryID = c.CategoryID
+GROUP BY FORMAT(TransactionDate, 'yyyy-MM')
+ORDER BY Month;
+
+SELECT c.CategoryName, SUM(t.Amount) AS Total
+FROM Transactions t
+JOIN Category c ON t.CategoryID = c.CategoryID
+WHERE c.CategoryType = 'Expense'
+GROUP BY c.CategoryName
+ORDER BY Total DESC;
+
+SELECT 
+    FORMAT(TransactionDate, 'yyyy-MM') AS Month,
+    SUM(CASE WHEN c.CategoryType = 'Income' THEN t.Amount ELSE 0 END) AS TotalIncome,
+    SUM(CASE WHEN c.CategoryType = 'Expense' THEN t.Amount ELSE 0 END) AS TotalExpense
+FROM Transactions t
+JOIN Category c ON t.CategoryID = c.CategoryID
+WHERE TransactionDate >= DATEADD(MONTH, -3, GETDATE())  
+GROUP BY FORMAT(TransactionDate, 'yyyy-MM')
+ORDER BY Month;
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (14, 5614226, 5614226, N'Phải thu', '2025-04-05', N'Đã thanh toán');
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (16, 2719583, 2719583, N'Phải thu', '2025-05-30', N'Đã thanh toán');
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (14, 1533224, 31980, N'Phải thu', '2025-04-01', N'Chưa thanh toán');
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (16, 4335942, 4335942, N'Phải thu', '2025-05-27', N'Đã thanh toán');
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (19, 8536477, 8536477, N'Phải thu', '2025-05-19', N'Đã thanh toán');
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (5, 3678638, 3678638, N'Phải trả', '2025-06-02', N'Đã thanh toán');
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (7, 5661907, 616217, N'Phải trả', '2025-04-17', N'Chưa thanh toán');
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (2, 7374122, 7374122, N'Phải trả', '2025-03-17', N'Đã thanh toán');
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (6, 5437923, 3072370, N'Phải trả', '2025-05-02', N'Chưa thanh toán');
+
+INSERT INTO Debt (PartnerID, TotalAmount, PaidAmount, DebtType, DueDate, DebtStatus)
+VALUES (9, 7350753, 7350753, N'Phải trả', '2025-03-15', N'Đã thanh toán');

@@ -23,6 +23,10 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.balanceLbl = new System.Windows.Forms.Label();
@@ -37,6 +41,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.incomeExpenseChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.categoryTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.categoryPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -44,6 +53,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeExpenseChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryPieChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -186,10 +198,68 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.categoryPieChart);
+            this.panel2.Controls.Add(this.categoryTypeComboBox);
+            this.panel2.Controls.Add(this.incomeExpenseChart);
             this.panel2.Location = new System.Drawing.Point(15, 214);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(842, 326);
             this.panel2.TabIndex = 1;
+            // 
+            // incomeExpenseChart
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.incomeExpenseChart.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.incomeExpenseChart.Legends.Add(legend6);
+            this.incomeExpenseChart.Location = new System.Drawing.Point(18, 40);
+            this.incomeExpenseChart.Name = "incomeExpenseChart";
+            this.incomeExpenseChart.Size = new System.Drawing.Size(439, 273);
+            this.incomeExpenseChart.TabIndex = 0;
+            this.incomeExpenseChart.Text = "chart1";
+            // 
+            // categoryTypeComboBox
+            // 
+            this.categoryTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryTypeComboBox.FormattingEnabled = true;
+            this.categoryTypeComboBox.Location = new System.Drawing.Point(706, 13);
+            this.categoryTypeComboBox.Name = "categoryTypeComboBox";
+            this.categoryTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.categoryTypeComboBox.TabIndex = 1;
+            this.categoryTypeComboBox.Click += new System.EventHandler(this.categoryTypeComboBox_SelectedIndexChanged);
+            // 
+            // categoryPieChart
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.categoryPieChart.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.categoryPieChart.Legends.Add(legend5);
+            this.categoryPieChart.Location = new System.Drawing.Point(432, 40);
+            this.categoryPieChart.Name = "categoryPieChart";
+            this.categoryPieChart.Size = new System.Drawing.Size(330, 273);
+            this.categoryPieChart.TabIndex = 2;
+            this.categoryPieChart.Text = "chart1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(625, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "By category:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Summary";
             // 
             // Dashboard
             // 
@@ -208,6 +278,10 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeExpenseChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryPieChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +302,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label totalExpenseLbl;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart incomeExpenseChart;
+        private System.Windows.Forms.ComboBox categoryTypeComboBox;
+        private System.Windows.Forms.DataVisualization.Charting.Chart categoryPieChart;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
