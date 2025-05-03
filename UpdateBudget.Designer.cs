@@ -25,9 +25,7 @@
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtPickerEndDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtPickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtCategory = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -35,6 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.updateBudgetBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.cbMonth = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,13 +62,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "UPDATE BUDGET";
             // 
-            // dtPickerEndDate
-            // 
-            this.dtPickerEndDate.Location = new System.Drawing.Point(116, 172);
-            this.dtPickerEndDate.Name = "dtPickerEndDate";
-            this.dtPickerEndDate.Size = new System.Drawing.Size(135, 20);
-            this.dtPickerEndDate.TabIndex = 17;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -74,16 +69,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(23, 172);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 16);
+            this.label6.Size = new System.Drawing.Size(42, 16);
             this.label6.TabIndex = 16;
-            this.label6.Text = "End date";
-            // 
-            // dtPickerStartDate
-            // 
-            this.dtPickerStartDate.Location = new System.Drawing.Point(116, 128);
-            this.dtPickerStartDate.Name = "dtPickerStartDate";
-            this.dtPickerStartDate.Size = new System.Drawing.Size(135, 20);
-            this.dtPickerStartDate.TabIndex = 15;
+            this.label6.Text = "Month";
             // 
             // txtAmount
             // 
@@ -97,20 +85,13 @@
             // 
             this.txtCategory.FormattingEnabled = true;
             this.txtCategory.Items.AddRange(new object[] {
-            "Food",
-            "Bill&Utilities",
-            "Shopping",
-            "Education",
-            "Entertainment",
-            "Investment",
-            "Other expense",
-            "Salary",
-            "Collect interest",
-            "Other income",
-            "Loan",
-            "Repayment",
-            "Debt collection",
-            "Debt"});
+            "Product Sales",
+            "Service Revenue",
+            "Investment Income",
+            "Utilities Expense",
+            "Salary Expense",
+            "Office Supplies",
+            "Tax Expense"});
             this.txtCategory.Location = new System.Drawing.Point(116, 51);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(135, 21);
@@ -123,9 +104,9 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(23, 132);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.Size = new System.Drawing.Size(33, 16);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Start date";
+            this.label4.Text = "Year";
             // 
             // label3
             // 
@@ -158,7 +139,7 @@
             this.updateBudgetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBudgetBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateBudgetBtn.ForeColor = System.Drawing.Color.White;
-            this.updateBudgetBtn.Location = new System.Drawing.Point(98, 203);
+            this.updateBudgetBtn.Location = new System.Drawing.Point(98, 256);
             this.updateBudgetBtn.Name = "updateBudgetBtn";
             this.updateBudgetBtn.Size = new System.Drawing.Size(80, 30);
             this.updateBudgetBtn.TabIndex = 18;
@@ -175,7 +156,7 @@
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Location = new System.Drawing.Point(192, 203);
+            this.cancelBtn.Location = new System.Drawing.Point(192, 256);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(80, 30);
             this.cancelBtn.TabIndex = 19;
@@ -183,16 +164,66 @@
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(116, 209);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(135, 20);
+            this.txtNote.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(23, 213);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 16);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Note";
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(116, 128);
+            this.txtYear.Multiline = true;
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(135, 20);
+            this.txtYear.TabIndex = 22;
+            // 
+            // cbMonth
+            // 
+            this.cbMonth.FormattingEnabled = true;
+            this.cbMonth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbMonth.Location = new System.Drawing.Point(116, 167);
+            this.cbMonth.Name = "cbMonth";
+            this.cbMonth.Size = new System.Drawing.Size(135, 21);
+            this.cbMonth.TabIndex = 23;
+            // 
             // UpdateBudget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 245);
+            this.ClientSize = new System.Drawing.Size(284, 298);
+            this.Controls.Add(this.cbMonth);
+            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.txtNote);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.updateBudgetBtn);
-            this.Controls.Add(this.dtPickerEndDate);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dtPickerStartDate);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.label4);
@@ -214,9 +245,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtPickerEndDate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtPickerStartDate;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.ComboBox txtCategory;
         private System.Windows.Forms.Label label4;
@@ -224,5 +253,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button updateBudgetBtn;
         private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.ComboBox cbMonth;
     }
 }

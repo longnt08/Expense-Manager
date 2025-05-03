@@ -26,6 +26,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bell_icon = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelExitMain = new System.Windows.Forms.Label();
             this.MainFormUsername = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.dashboardBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bell_icon = new System.Windows.Forms.PictureBox();
             this.manageDebt1 = new ExpenseManager.ManageDebt();
             this.manageTransaction1 = new ExpenseManager.ManageTransaction();
             this.manageGoal1 = new ExpenseManager.ManageGoal();
@@ -50,10 +50,10 @@
             this.manageAccount1 = new ExpenseManager.ManageAccount();
             this.dashboard1 = new ExpenseManager.Dashboard();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bell_icon)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bell_icon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,6 +70,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1100, 43);
             this.panel1.TabIndex = 0;
+            // 
+            // bell_icon
+            // 
+            this.bell_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bell_icon.Image = ((System.Drawing.Image)(resources.GetObject("bell_icon.Image")));
+            this.bell_icon.Location = new System.Drawing.Point(224, 6);
+            this.bell_icon.Name = "bell_icon";
+            this.bell_icon.Size = new System.Drawing.Size(30, 30);
+            this.bell_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bell_icon.TabIndex = 2;
+            this.bell_icon.TabStop = false;
+            this.bell_icon.Click += new System.EventHandler(this.notificationBell_Click);
             // 
             // label1
             // 
@@ -141,7 +153,7 @@
             this.manageDebtBtn.TabIndex = 10;
             this.manageDebtBtn.Text = "MANAGE DEBT/LOAN";
             this.manageDebtBtn.UseVisualStyleBackColor = false;
-            this.manageDebtBtn.Click += new System.EventHandler(this.manageBtn_Click);
+            this.manageDebtBtn.Click += new System.EventHandler(this.manageDebtBtn_Click);
             // 
             // manageFundBtn
             // 
@@ -304,18 +316,6 @@
             this.panel3.Size = new System.Drawing.Size(875, 557);
             this.panel3.TabIndex = 2;
             // 
-            // bell_icon
-            // 
-            this.bell_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bell_icon.Image = ((System.Drawing.Image)(resources.GetObject("bell_icon.Image")));
-            this.bell_icon.Location = new System.Drawing.Point(224, 6);
-            this.bell_icon.Name = "bell_icon";
-            this.bell_icon.Size = new System.Drawing.Size(30, 30);
-            this.bell_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bell_icon.TabIndex = 2;
-            this.bell_icon.TabStop = false;
-            this.bell_icon.Click += new System.EventHandler(this.notificationBell_Click);
-            // 
             // manageDebt1
             // 
             this.manageDebt1.Location = new System.Drawing.Point(0, 0);
@@ -382,10 +382,10 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bell_icon)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bell_icon)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Net.Http;
 using System.Text;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace ExpenseManager {
     public partial class MainForm : Form {
@@ -33,8 +32,6 @@ namespace ExpenseManager {
             this.username = username;
             this.email = email;
             this.dateCreated = dateCreated;
-
-            dashboard1.LoadData();
         }
 
         private void labelExitMain_Click(object sender, EventArgs e) {
@@ -61,8 +58,6 @@ namespace ExpenseManager {
             manageFund1.Visible = false;
             manageTransaction1.Visible = true;
             manageDebt1.Visible = false;
-
-            //manageTransaction1.setUserID(userID);
         }
 
         private void manageGoalBtn_Click(object sender, EventArgs e) {
@@ -73,8 +68,6 @@ namespace ExpenseManager {
             manageTransaction1.Visible = false;
             manageFund1.Visible = false;
             manageDebt1.Visible = false;
-
-            //manageGoal1.setUserID(userID);
         }
 
         private void manageBudgetBtn_Click(object sender, EventArgs e) {
@@ -96,7 +89,7 @@ namespace ExpenseManager {
             manageFund1.Visible = false;
             manageDebt1.Visible = false;
 
-            //manageAccount1.setData(userID, username, email, dateCreated);
+            manageAccount1.setData(userID, username, email, dateCreated);
         }
 
         //Part of AI integrated notification center
@@ -180,7 +173,7 @@ namespace ExpenseManager {
             manageFund1.LoadData();
         }
 
-        private void manageBtn_Click(object sender, EventArgs e) {
+        private void manageDebtBtn_Click(object sender, EventArgs e) {
             dashboard1.Visible = false;
             manageAccount1.Visible = false;
             manageBudget1.Visible = false;
@@ -320,6 +313,7 @@ namespace ExpenseManager {
                 manageTransactionBtn.PerformClick(); // show the ManageTransaction panel
             }
         }
+
 
     }
 }

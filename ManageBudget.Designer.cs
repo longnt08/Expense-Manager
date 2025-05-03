@@ -26,9 +26,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.createBudgetBtn = new System.Windows.Forms.Button();
-            this.dtPickerEndDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtPickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.AddNewTransactionLabel = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtCategory = new System.Windows.Forms.ComboBox();
@@ -41,6 +39,10 @@
             this.dgvBudgets = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtBudgetYear = new System.Windows.Forms.TextBox();
+            this.cbBudgetMonth = new System.Windows.Forms.ComboBox();
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgets)).BeginInit();
@@ -49,10 +51,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.txtNote);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.cbBudgetMonth);
+            this.panel2.Controls.Add(this.txtBudgetYear);
             this.panel2.Controls.Add(this.createBudgetBtn);
-            this.panel2.Controls.Add(this.dtPickerEndDate);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.dtPickerStartDate);
             this.panel2.Controls.Add(this.AddNewTransactionLabel);
             this.panel2.Controls.Add(this.txtAmount);
             this.panel2.Controls.Add(this.txtCategory);
@@ -82,13 +86,6 @@
             this.createBudgetBtn.UseVisualStyleBackColor = false;
             this.createBudgetBtn.Click += new System.EventHandler(this.createBudgetBtn_Click);
             // 
-            // dtPickerEndDate
-            // 
-            this.dtPickerEndDate.Location = new System.Drawing.Point(112, 205);
-            this.dtPickerEndDate.Name = "dtPickerEndDate";
-            this.dtPickerEndDate.Size = new System.Drawing.Size(135, 20);
-            this.dtPickerEndDate.TabIndex = 9;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -96,16 +93,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(19, 205);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 16);
+            this.label6.Size = new System.Drawing.Size(42, 16);
             this.label6.TabIndex = 8;
-            this.label6.Text = "End date";
-            // 
-            // dtPickerStartDate
-            // 
-            this.dtPickerStartDate.Location = new System.Drawing.Point(112, 156);
-            this.dtPickerStartDate.Name = "dtPickerStartDate";
-            this.dtPickerStartDate.Size = new System.Drawing.Size(135, 20);
-            this.dtPickerStartDate.TabIndex = 7;
+            this.label6.Text = "Month";
             // 
             // AddNewTransactionLabel
             // 
@@ -130,20 +120,13 @@
             // 
             this.txtCategory.FormattingEnabled = true;
             this.txtCategory.Items.AddRange(new object[] {
-            "Food",
-            "Bill&Utilities",
-            "Shopping",
-            "Education",
-            "Entertainment",
-            "Investment",
-            "Other expense",
-            "Salary",
-            "Collect interest",
-            "Other income",
-            "Loan",
-            "Repayment",
-            "Debt collection",
-            "Debt"});
+            "Product Sales",
+            "Service Revenue",
+            "Investment Income",
+            "Utilities Expense",
+            "Salary Expense",
+            "Office Supplies",
+            "Tax Expense"});
             this.txtCategory.Location = new System.Drawing.Point(112, 71);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(135, 21);
@@ -156,9 +139,9 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(19, 156);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.Size = new System.Drawing.Size(33, 16);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Start date";
+            this.label4.Text = "Year";
             // 
             // label3
             // 
@@ -245,6 +228,54 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // txtBudgetYear
+            // 
+            this.txtBudgetYear.Location = new System.Drawing.Point(112, 156);
+            this.txtBudgetYear.Multiline = true;
+            this.txtBudgetYear.Name = "txtBudgetYear";
+            this.txtBudgetYear.Size = new System.Drawing.Size(135, 20);
+            this.txtBudgetYear.TabIndex = 11;
+            // 
+            // cbBudgetMonth
+            // 
+            this.cbBudgetMonth.FormattingEnabled = true;
+            this.cbBudgetMonth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbBudgetMonth.Location = new System.Drawing.Point(112, 204);
+            this.cbBudgetMonth.Name = "cbBudgetMonth";
+            this.cbBudgetMonth.Size = new System.Drawing.Size(135, 21);
+            this.cbBudgetMonth.TabIndex = 12;
+            // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(410, 72);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(135, 20);
+            this.txtNote.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(317, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 16);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Note";
+            // 
             // ManageBudget
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -275,11 +306,13 @@
         private System.Windows.Forms.DataGridView dgvBudgets;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.DateTimePicker dtPickerEndDate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtPickerStartDate;
         private System.Windows.Forms.Button createBudgetBtn;
         private System.Windows.Forms.Button filterBudgetBtn;
         private System.Windows.Forms.ComboBox txtFilterBudgets;
+        private System.Windows.Forms.ComboBox cbBudgetMonth;
+        private System.Windows.Forms.TextBox txtBudgetYear;
+        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.Label label5;
     }
 }

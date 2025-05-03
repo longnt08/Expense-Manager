@@ -23,11 +23,11 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.dtPickerDealine = new System.Windows.Forms.DateTimePicker();
+            this.dtUpdatePickerDealine = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtSavedAmount = new System.Windows.Forms.TextBox();
-            this.txtTargetAmout = new System.Windows.Forms.TextBox();
+            this.txtUpdateGoalName = new System.Windows.Forms.TextBox();
+            this.txtUpdateCurrentAmount = new System.Windows.Forms.TextBox();
+            this.txtUpdateTargetAmout = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,12 +38,12 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dtPickerDealine
+            // dtUpdatePickerDealine
             // 
-            this.dtPickerDealine.Location = new System.Drawing.Point(131, 195);
-            this.dtPickerDealine.Name = "dtPickerDealine";
-            this.dtPickerDealine.Size = new System.Drawing.Size(199, 20);
-            this.dtPickerDealine.TabIndex = 17;
+            this.dtUpdatePickerDealine.Location = new System.Drawing.Point(131, 195);
+            this.dtUpdatePickerDealine.Name = "dtUpdatePickerDealine";
+            this.dtUpdatePickerDealine.Size = new System.Drawing.Size(199, 20);
+            this.dtUpdatePickerDealine.TabIndex = 17;
             // 
             // label6
             // 
@@ -56,29 +56,29 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Deadline";
             // 
-            // txtName
+            // txtUpdateGoalName
             // 
-            this.txtName.Location = new System.Drawing.Point(131, 55);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(199, 20);
-            this.txtName.TabIndex = 15;
+            this.txtUpdateGoalName.Location = new System.Drawing.Point(131, 55);
+            this.txtUpdateGoalName.Multiline = true;
+            this.txtUpdateGoalName.Name = "txtUpdateGoalName";
+            this.txtUpdateGoalName.Size = new System.Drawing.Size(199, 20);
+            this.txtUpdateGoalName.TabIndex = 15;
             // 
-            // txtSavedAmount
+            // txtUpdateCurrentAmount
             // 
-            this.txtSavedAmount.Location = new System.Drawing.Point(131, 147);
-            this.txtSavedAmount.Multiline = true;
-            this.txtSavedAmount.Name = "txtSavedAmount";
-            this.txtSavedAmount.Size = new System.Drawing.Size(199, 20);
-            this.txtSavedAmount.TabIndex = 14;
+            this.txtUpdateCurrentAmount.Location = new System.Drawing.Point(131, 147);
+            this.txtUpdateCurrentAmount.Multiline = true;
+            this.txtUpdateCurrentAmount.Name = "txtUpdateCurrentAmount";
+            this.txtUpdateCurrentAmount.Size = new System.Drawing.Size(199, 20);
+            this.txtUpdateCurrentAmount.TabIndex = 14;
             // 
-            // txtTargetAmout
+            // txtUpdateTargetAmout
             // 
-            this.txtTargetAmout.Location = new System.Drawing.Point(131, 99);
-            this.txtTargetAmout.Multiline = true;
-            this.txtTargetAmout.Name = "txtTargetAmout";
-            this.txtTargetAmout.Size = new System.Drawing.Size(199, 20);
-            this.txtTargetAmout.TabIndex = 13;
+            this.txtUpdateTargetAmout.Location = new System.Drawing.Point(131, 99);
+            this.txtUpdateTargetAmout.Multiline = true;
+            this.txtUpdateTargetAmout.Name = "txtUpdateTargetAmout";
+            this.txtUpdateTargetAmout.Size = new System.Drawing.Size(199, 20);
+            this.txtUpdateTargetAmout.TabIndex = 13;
             // 
             // label4
             // 
@@ -87,9 +87,9 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(19, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 16);
+            this.label4.Size = new System.Drawing.Size(97, 16);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Saved amount";
+            this.label4.Text = "Current amount";
             // 
             // label3
             // 
@@ -177,11 +177,11 @@
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.updateGoalBtn);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dtPickerDealine);
+            this.Controls.Add(this.dtUpdatePickerDealine);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtSavedAmount);
-            this.Controls.Add(this.txtTargetAmout);
+            this.Controls.Add(this.txtUpdateGoalName);
+            this.Controls.Add(this.txtUpdateCurrentAmount);
+            this.Controls.Add(this.txtUpdateTargetAmout);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -198,11 +198,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dtPickerDealine;
+        private System.Windows.Forms.DateTimePicker dtUpdatePickerDealine;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtSavedAmount;
-        private System.Windows.Forms.TextBox txtTargetAmout;
+        private System.Windows.Forms.TextBox txtUpdateGoalName;
+        private System.Windows.Forms.TextBox txtUpdateCurrentAmount;
+        private System.Windows.Forms.TextBox txtUpdateTargetAmout;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

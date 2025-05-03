@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExpenseManager.Helpers {
@@ -65,9 +61,9 @@ namespace ExpenseManager.Helpers {
 
                     if (dt.Rows.Count > 0) {
                         dgv.DataSource = dt;
-                        dgv.Columns["FundID"].Visible = false;
-                        dgv.Columns["CategoryID"].Visible = false;
-                        dgv.Columns["PartnerID"].Visible = false;
+                        //dgv.Columns["FundID"].Visible = false;
+                        //dgv.Columns["CategoryID"].Visible = false;
+                        //dgv.Columns["PartnerID"].Visible = false;
                         dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     } else {
                         dgv.DataSource = null;

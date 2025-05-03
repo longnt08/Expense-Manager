@@ -16,13 +16,6 @@ namespace ExpenseManager {
             InitializeComponent();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e) {
-
-        }
-
-        private void ManageAccount_Load(object sender, EventArgs e) {
-            
-        }
         public void setData(int userID, string username, string email, DateTime dateCreated) {
             idInfo.Text = userID.ToString();
             usernameInfo.Text = username;
@@ -33,6 +26,32 @@ namespace ExpenseManager {
         private void logoutBtnManageAcc_Click(object sender, EventArgs e) {
             MessageBox.Show("button clicked");
             LogoutClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void ChangeAvatar() {
+            using (OpenFileDialog ofd = new OpenFileDialog()) {
+                ofd.Title = "Select Avatar Image";
+                ofd.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.bmp)|*.jpg;*.jpeg;*.png;*.bmp";
+
+                if (ofd.ShowDialog() == DialogResult.OK) {
+                    try {
+                        string imagePath = ofd.FileName;
+                        picAvatar.Image = Image.FromFile(imagePath);
+                        picAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+
+                        // Optionally store the path or convert to byte[] for DB
+                        // byte[] imageData = File.ReadAllBytes(imagePath);
+
+                        MessageBox.Show("Avatar updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    } catch (Exception ex) {
+                        MessageBox.Show("Failed to load image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void changeAvatarBtn_Clicks(object sender, EventArgs e) {
+            ChangeAvatar();
         }
     }
 }

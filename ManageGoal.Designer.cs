@@ -35,7 +35,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtSavedAmount = new System.Windows.Forms.TextBox();
+            this.txtCurrentAmount = new System.Windows.Forms.TextBox();
             this.txtTargetAmout = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -111,7 +111,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtName);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtSavedAmount);
+            this.panel2.Controls.Add(this.txtCurrentAmount);
             this.panel2.Controls.Add(this.txtTargetAmout);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -176,13 +176,13 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Add new goal";
             // 
-            // txtSavedAmount
+            // txtCurrentAmount
             // 
-            this.txtSavedAmount.Location = new System.Drawing.Point(131, 163);
-            this.txtSavedAmount.Multiline = true;
-            this.txtSavedAmount.Name = "txtSavedAmount";
-            this.txtSavedAmount.Size = new System.Drawing.Size(199, 20);
-            this.txtSavedAmount.TabIndex = 5;
+            this.txtCurrentAmount.Location = new System.Drawing.Point(131, 163);
+            this.txtCurrentAmount.Multiline = true;
+            this.txtCurrentAmount.Name = "txtCurrentAmount";
+            this.txtCurrentAmount.Size = new System.Drawing.Size(199, 20);
+            this.txtCurrentAmount.TabIndex = 5;
             // 
             // txtTargetAmout
             // 
@@ -199,9 +199,9 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(19, 167);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 16);
+            this.label4.Size = new System.Drawing.Size(97, 16);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Saved amount";
+            this.label4.Text = "Current amount";
             // 
             // label3
             // 
@@ -256,7 +256,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSavedAmount;
+        private System.Windows.Forms.TextBox txtCurrentAmount;
         private System.Windows.Forms.TextBox txtTargetAmout;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label5;

@@ -1,14 +1,35 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\ak550\\",
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\managedebt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:managedebt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|c:\\users\\admin\\source\\repos\\expensemanager\\manageaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:manageaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|d:\\ak550\\managedebt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:managedebt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|c:\\users\\admin\\source\\repos\\expensemanager\\manageaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:manageaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|c:\\users\\admin\\source\\repos\\expensemanager\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|c:\\users\\admin\\source\\repos\\expensemanager\\updatebudget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:updatebudget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\bicevagl..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|c:\\users\\admin\\source\\repos\\expensemanager\\helpers\\formhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85658624-3A7C-4BD0-80D7-2F47739A7212}|ExpenseManager.csproj|solutionrelative:helpers\\formhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\bicevagl..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\bicevagl..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,32 +38,108 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 221,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ManageDebt.cs [Design]",
-              "DocumentMoniker": "D:\\ak550\\ManageDebt.cs",
-              "RelativeDocumentMoniker": "ManageDebt.cs",
-              "ToolTip": "D:\\ak550\\ManageDebt.cs [Design]",
-              "RelativeToolTip": "ManageDebt.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T15:35:58.354Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ManageDebt.cs",
-              "DocumentMoniker": "D:\\ak550\\ManageDebt.cs",
-              "RelativeDocumentMoniker": "ManageDebt.cs",
-              "ToolTip": "D:\\ak550\\ManageDebt.cs",
-              "RelativeToolTip": "ManageDebt.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAowFUAAAAhAAAAAAAAAA==",
+              "Title": "ManageAccount.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\ManageAccount.cs",
+              "RelativeDocumentMoniker": "ManageAccount.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\ManageAccount.cs [Design]",
+              "RelativeToolTip": "ManageAccount.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T15:36:02.823Z",
+              "WhenOpened": "2025-05-03T05:46:04.319Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\MainForm.cs*",
+              "RelativeToolTip": "MainForm.cs*",
+              "ViewState": "AgIAAD4AAAAAAAAAAAA8wFgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T05:45:46.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UpdateBudget.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\UpdateBudget.cs",
+              "RelativeDocumentMoniker": "UpdateBudget.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\UpdateBudget.cs",
+              "RelativeToolTip": "UpdateBudget.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwBMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T04:42:52.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SQLQuery1.sql ",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\bicevagl..sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\bicevagl..sql",
+              "ToolTip": "SQLQuery1.sql *",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-03T03:54:50.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 221,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormHelper.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\Helpers\\FormHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\FormHelper.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\Helpers\\FormHelper.cs",
+              "RelativeToolTip": "Helpers\\FormHelper.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowD4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T03:30:19.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManageAccount.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\ManageAccount.cs",
+              "RelativeDocumentMoniker": "ManageAccount.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\ExpenseManager\\ManageAccount.cs",
+              "RelativeToolTip": "ManageAccount.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwDAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T05:46:09.674Z",
               "EditorCaption": ""
             }
           ]

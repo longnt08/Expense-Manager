@@ -27,7 +27,7 @@
             this.delAccBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.updateInfoBtn = new System.Windows.Forms.Button();
-            this.changeProfileImgBtn = new System.Windows.Forms.Button();
+            this.changeAvatarBtn = new System.Windows.Forms.Button();
             this.usernameInfo = new System.Windows.Forms.Label();
             this.emailInfo = new System.Windows.Forms.Label();
             this.createdAtInfo = new System.Windows.Forms.Label();
@@ -37,10 +37,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxManageInfo = new System.Windows.Forms.PictureBox();
+            this.picAvatar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManageInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,7 +49,7 @@
             this.panel1.Controls.Add(this.delAccBtn);
             this.panel1.Controls.Add(this.logoutBtn);
             this.panel1.Controls.Add(this.updateInfoBtn);
-            this.panel1.Controls.Add(this.changeProfileImgBtn);
+            this.panel1.Controls.Add(this.changeAvatarBtn);
             this.panel1.Controls.Add(this.usernameInfo);
             this.panel1.Controls.Add(this.emailInfo);
             this.panel1.Controls.Add(this.createdAtInfo);
@@ -59,7 +59,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBoxManageInfo);
+            this.panel1.Controls.Add(this.picAvatar);
             this.panel1.Location = new System.Drawing.Point(24, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(826, 269);
@@ -114,21 +114,22 @@
             this.updateInfoBtn.Text = "Update";
             this.updateInfoBtn.UseVisualStyleBackColor = false;
             // 
-            // changeProfileImgBtn
+            // changeAvatarBtn
             // 
-            this.changeProfileImgBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.changeProfileImgBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.changeProfileImgBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.changeProfileImgBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.changeProfileImgBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changeProfileImgBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeProfileImgBtn.ForeColor = System.Drawing.Color.White;
-            this.changeProfileImgBtn.Location = new System.Drawing.Point(75, 203);
-            this.changeProfileImgBtn.Name = "changeProfileImgBtn";
-            this.changeProfileImgBtn.Size = new System.Drawing.Size(75, 34);
-            this.changeProfileImgBtn.TabIndex = 12;
-            this.changeProfileImgBtn.Text = "Change";
-            this.changeProfileImgBtn.UseVisualStyleBackColor = false;
+            this.changeAvatarBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.changeAvatarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.changeAvatarBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.changeAvatarBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.changeAvatarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changeAvatarBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeAvatarBtn.ForeColor = System.Drawing.Color.White;
+            this.changeAvatarBtn.Location = new System.Drawing.Point(75, 203);
+            this.changeAvatarBtn.Name = "changeAvatarBtn";
+            this.changeAvatarBtn.Size = new System.Drawing.Size(75, 34);
+            this.changeAvatarBtn.TabIndex = 12;
+            this.changeAvatarBtn.Text = "Change";
+            this.changeAvatarBtn.UseVisualStyleBackColor = false;
+            this.changeAvatarBtn.Click += new System.EventHandler(this.changeAvatarBtn_Clicks);
             // 
             // usernameInfo
             // 
@@ -220,14 +221,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "YOUR INFORMATION";
             // 
-            // pictureBoxManageInfo
+            // picAvatar
             // 
-            this.pictureBoxManageInfo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBoxManageInfo.Location = new System.Drawing.Point(43, 33);
-            this.pictureBoxManageInfo.Name = "pictureBoxManageInfo";
-            this.pictureBoxManageInfo.Size = new System.Drawing.Size(150, 150);
-            this.pictureBoxManageInfo.TabIndex = 0;
-            this.pictureBoxManageInfo.TabStop = false;
+            this.picAvatar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.picAvatar.Location = new System.Drawing.Point(43, 33);
+            this.picAvatar.Name = "picAvatar";
+            this.picAvatar.Size = new System.Drawing.Size(150, 150);
+            this.picAvatar.TabIndex = 0;
+            this.picAvatar.TabStop = false;
             // 
             // panel2
             // 
@@ -244,10 +245,9 @@
             this.Controls.Add(this.panel1);
             this.Name = "ManageAccount";
             this.Size = new System.Drawing.Size(875, 557);
-            this.Load += new System.EventHandler(this.ManageAccount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManageInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,7 +256,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBoxManageInfo;
+        private System.Windows.Forms.PictureBox picAvatar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -265,7 +265,7 @@
         private System.Windows.Forms.Label emailInfo;
         private System.Windows.Forms.Label createdAtInfo;
         private System.Windows.Forms.Label idInfo;
-        private System.Windows.Forms.Button changeProfileImgBtn;
+        private System.Windows.Forms.Button changeAvatarBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button delAccBtn;
         private System.Windows.Forms.Button logoutBtn;
